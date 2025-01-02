@@ -1,0 +1,136 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+body {
+	font-family: 微软雅黑, Arial, sans-serif;
+	font-size: 16px;
+	color: #aa5500;
+	background-color: #f2ecd5;
+}
+
+.header {
+	width: 1240px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header.logo {
+	float: left;
+}
+
+.gradient-text {
+	background: linear-gradient(to top, #a58775, #c18194, #e2b986, #a58775);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 72px;
+	font-weight: bold;
+	font-family: '楷体';
+}
+
+.header a:hover {
+	color: #AA5500;
+	text-decoration: none;
+}
+
+.header .login-register {
+	margin: 0 auto;
+	max-width: 980px;
+}
+
+.header a {
+	text-decoration: none;
+	color: #9f6e84;
+	outline: none;
+}
+
+
+
+.nav {
+	list-style: none;
+	border: none;
+	color: #aa885f;
+	width: 1260px;
+	height: 60px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px auto;
+	font-family: '楷体';
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.nav a:hover {
+	color: #b5761e;
+	background-color: #fff3ac;
+	width: 210px;
+	height: 36px;
+}
+
+.nav a:link {
+	color: #aa8822;
+	text-decoration: none;
+}
+
+.nav a:visited {
+	color: #AA5500;
+	text-decoration: none;
+}
+
+#bg {
+	width: 1260px;
+}
+
+.nav a {
+	width: 210px;
+	height: 36px;
+	display: inline-block;
+	text-align: center;
+	line-height: 36px;
+	background: #ece6c4;
+}
+
+.nav li {
+	float: left;
+	position: relative;
+}
+
+.dis {
+	left: 0;
+	display: none;
+	position: absolute;
+	top: 100%;
+	z-index: 1;
+}
+
+.btn:hover .dis {
+	display: block;
+}
+
+.dis li {
+	clear: left;
+	margin-top: 1px;
+}
+
+
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ffedc1;
+	height: 100px;
+	width: 1519px;
+	margin: 10px auto;
+}
+
+.footer p {
+	color: #A3593F;
+	text-align: center;
+}

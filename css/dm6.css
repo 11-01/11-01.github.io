@@ -1,0 +1,141 @@
+/*banner开始*/
+.banner {
+	width: 1240px;
+	height: 700px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 20px;
+	margin: 10px auto;
+}
+
+#banner_pic img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px auto;
+	width: 1240px;
+	height: 700px;
+	border-radius: 20px;
+}
+
+#banner ul {
+	width: 1240px;
+	height: 700px;
+	margin: 0 auto;
+}
+
+#banner .banner_pic li {
+	display: none;
+	position: absolute;
+}
+
+#banner .banner_pic .current {
+	display: block;
+}
+
+#banner ol {
+	position: relative;
+	left: 350px;
+	top: 320px;
+}
+
+#button li {
+	float: left;
+	width: 15px;
+	height: 15px;
+	background: url(images/flashbutton.gif) no-repeat -15px 0;
+	cursor: pointer;
+	margin-left: 3px;
+}
+
+#button li.current {
+	background: url(images/flashbutton.gif) no-repeat 0 0;
+}
+
+
+
+
+
+
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px auto;
+	padding: 20px;
+	width: 1200px;
+	height: 580px;
+	border-radius: 20px;
+	background-color: #fffee9;
+}
+.content ul{	
+	margin: 20px 0 20px 160px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fffee9;
+	width: 150px;
+	height: 40px;
+	border-radius: 20px;
+	list-style-type: none;
+}
+.content a{
+	color: #597558;
+	font-size: 20px ;
+	display: inline-block;
+	text-decoration: none;
+}
+form {
+	background-color: #dbddc6;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	margin: 50px auto;
+}
+
+input[type=text],
+input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+label{
+	color: #597558;
+}
+
+button {
+	background-color: #acc3a8;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 100%;
+}
+
+button:hover {
+	background-color: #597558;
+}
+
+.container {
+	padding: 16px;
+}
+
+span.psw {
+	float: right;
+	padding-top: 16px;
+}
+
+@media screen and (max-width: 600px) {
+	form {
+		margin-top: 0;
+	}
+}
+
+

@@ -1,0 +1,28 @@
+window.onload = function() {
+	var evt, tabName;
+
+	function openTab() {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace("active", "");
+		}
+		document.getElementById(tabName).style.display = "block";
+		evt.currentTarget.className += " active";
+	}
+
+	// 默认打开第一个选项卡
+	document.getElementsByClassName("tablinks")[0].click();
+	setInterval(function() {
+		var activeTab = document.querySelector('.tablinks.active');
+		var nextTab = activeTab.nextElementSibling;
+		if (!nextTab) {
+		  nextTab = activeTab.parentElement.firstElementChild;
+		}
+		nextTab.click();
+	}, 3000);
+}

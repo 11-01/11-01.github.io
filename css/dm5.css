@@ -1,0 +1,108 @@
+/*banner开始*/
+.banner img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px auto;
+	width: 1240px;
+	height: 700px;
+	border-radius: 20px;
+}
+
+/*banner结束*/
+
+.content {
+	width: 1200px;
+	height: 1250px;
+	margin: 10px auto;
+	padding: 20px;
+	background-color: #e4e7d1;
+	font-family: '楷体';
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.content h2 {
+	color: #888800;
+	font-size: 30px;
+	text-shadow: 2px 1px 4px #b6bd64;
+	font-family: '楷体';
+	padding-bottom: 5px;
+	border-bottom: #d9c1ca 5px dotted;
+	margin-bottom: 10px;
+}
+
+.content_b {
+	width: 1200px;
+	height: 620px;
+}
+
+
+.content_b_gqj {
+	position: relative;
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 50px 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	float: left;
+}
+.content_b_gqj img {
+	display: block;
+	width: 100%;
+	height: 210px;
+}
+.content_b_gqj p {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.content_b1 {
+	width: 1200px;
+	height: 350px;
+}
+
+.content_b2 {
+	width: 1200px;
+	height: 250px;
+}
+
+
+
+.tab {
+	overflow: hidden;
+	border: 1px solid #d5d2b7;
+	background-color: #a8af9f;
+}
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+}
+.tab button:hover {background-color: #c7c8a7;}
+.tab button.active {background-color: #c4cc9a;}
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+.tabcontent h3 {color: #888800;}
+.tabcontent p {
+	height: 150px;
+	color: #888467;
+}

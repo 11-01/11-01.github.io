@@ -1,0 +1,30 @@
+/*banner开始*/
+.banner img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px auto;
+	width: 1240px;
+	height: 700px;
+	border-radius: 20px;
+}
+
+/*banner结束*/
+
+.content {
+	width: 1200px;
+	height: 1120px;
+	margin: 10px auto;
+	padding: 20px;
+	background-color: #edcfd7;
+	font-family: '楷体';
+	font-size: 18px;
+	border-radius: 20px;}
+.content h2 {
+	color: #c71672;
+	font-size: 30px;
+	text-shadow: 2px 1px 4px #b56f7c;
+	padding-bottom: 10px;
+	border-bottom: #b8b4a2 5px dotted;}
+video {width: 380px;height: 240px;padding: 10px;float: left;}
+video:hover {transform: scale(1.2);}
