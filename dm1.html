@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>千与千寻首页</title>
+	</head>
+	<link href="css/dm1.css " rel="stylesheet" />
+	<link href="css/kj.css " rel="stylesheet" />
+	<script type="text/javascript" src="js/nav-menu.js"></script>
+	<script type="text/javascript" src="js/pic.js"></script>
+
+	<body>
+		<div id="one">
+			<div class="header">
+				<div>
+					<img src="images/logo.jpg" width="400px " height="120px" />
+				</div>
+
+				<div>
+					<h3 class="gradient-text">&nbsp;&nbsp;&nbsp;&nbsp;千与千寻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+				</div>
+				<div class="login-register">
+					<a class="text-content" href="dm6.html">登录</a>
+					<a class="text-content">&nbsp;|&nbsp;</a>
+					<a class="text-content" href="dm6.html">注册</a>
+				</div>
+			</div>
+
+			<!--nav 导航begin-->
+			<div class="nav">
+				<ul id="bg">
+					<li class="btn">
+						<a href="dm1.html#one" target="_blank">🎟千寻首页</a>
+						<ul class="dis">
+							<li><a href="dm1.html#content_a">千与千寻简介</a></li>
+							<li><a href="dm1.html#content_b">千与千寻宣传图</a></li>
+						</ul>
+					</li>
+					<li class="btn">
+						<a href="dm2.html#two" target="_blank">🎟剧情介绍</a>
+						<ul class="dis">
+							<li><a href="dm2.html#content_a">剧情简介</a></li>
+							<li><a href="dm2.html#content_b">精彩片段</a></li>
+						</ul>
+					</li>
+					<li class="btn">
+						<a href="dm3.html#three" target="_blank">🎟角色介绍</a>
+						<ul class="dis">
+							<li><a href="dm3.html#a1">小千</a></li>
+							<li><a href="dm3.html#a2">白龙</a></li>
+							<li><a href="dm3.html#a3">锅炉爷爷</a></li>
+							<li><a href="dm3.html#a4">汤婆婆</a></li>
+							<li><a href="dm3.html#a5">钱婆婆</a></li>
+							<li><a href="dm3.html#a6">无脸男</a></li>
+							<li><a href="dm3.html#a7">小玲</a></li>
+							<li><a href="dm3.html#a8">坊宝宝</a></li>
+							<li><a href="dm3.html#a9">河神</a></li>
+						</ul>
+					</li>
+					<li><a href="dm4.html#four" target="_blank">🎟影片意义</a></li>
+					<li><a href="dm5.html#five" target="_blank">🎟影片评价</a></li>
+					<li><a href="dm6.html#six" target="_blank">🎟影迷登录</a></li>
+				</ul>
+			</div>
+			<!--nav end-->
+
+			<!--banner begin-->
+			<div class="banner" id="banner">
+				<ul class="banner_pic" id="banner_pic">
+					<li class="current"><img src="images/banner.jpg" /></li>
+					<li class="pic"><img src="images/banner3.jpg" /></li>
+					<li class="pic"><img src="images/banner4.jpg" /></li>
+					<li class="pic"><img src="images/banner5.jpg" /></li>
+				</ul>
+				<ol id="button">
+					<li class="current"></li>
+					<li class="but"></li>
+					<li class="but"></li>
+					<li class="but"></li>
+				</ol>
+				<script>
+					window.onload = function() {
+						function picChange() {
+							var current_index = 0;
+							var timer = window.setInterval(autoChange, 1500);
+							var button_li = document.getElementById("button").getElementsByTagName("li");
+							var pic_li = document.getElementById("banner_pic").getElementsByTagName("li");
+							for (var i = 0; i < button_li.length; i++) {
+								button_li[i].onmouseover = function() {
+									if (timer) {
+										clearInterval(timer);
+									}
+									for (var j = 0; j < pic_li.length; j++) {
+										if (button_li[j] == this) {
+											current_index = j;
+											button_li[j].className = "current";
+											pic_li[j].className = "current";
+										} else {
+											pic_li[j].className = "li";
+											button_li[j].className = "but";
+										}
+									}
+								}
+								button_li[i].onmouseout = function() {
+									timer = setInterval(autoChange, 1500);
+								}
+							}
+
+							function autoChange() {
+								++current_index;
+								if (current_index == button_li.length) {
+									current_index = 0;
+								}
+								for (var i = 0; i < button_li.length; i++) {
+									if (i == current_index) {
+										button_li[i].className = "current";
+										pic_li[i].className = "current";
+									} else {
+										button_li[i].className = "but";
+										pic_li[i].className = "li";
+									}
+								}
+							}
+						}
+						picChange();
+
+
+						function photo() {
+							//定义滚动速度
+							var speed = 50;
+							//获取<div id="content_b">元素
+							var content_b = document.getElementById("content_b");
+							//复制一个<span>，用于无缝滚动
+							content_b.innerHTML += content_b.innerHTML;
+							//获取两个<span>元素
+							var span = content_b.getElementsByTagName("span");
+							//启动定时器，调用滚动函数
+							var timer1 = window.setInterval(marquee, speed);
+							//鼠标移入时暂停滚动，移出时继续滚动
+							content_b.onmouseover = function() {
+								clearInterval(timer1);
+							}
+							content_b.onmouseout = function() {
+								timer1 = setInterval(marquee, speed);
+							};
+							//滚动函数
+							function marquee() {
+								//当第1个<span>被完全卷出时
+								if (content_b.scrollLeft > span[0].offsetWidth) {
+									//将被卷起的内容归0
+									content_b.scrollLeft = 0;
+								} else {
+									//否则向左滚动
+									++content_b.scrollLeft;
+								}
+							}
+						}
+						photo();
+					}
+				</script>
+			</div>
+			<!--banner end-->
+
+
+
+			<!--content begin-->
+			<div class="content" id="one">
+				<br /><br />
+				<div class="music">
+					<img src="images/gq.jpg" width="95px" height="95px" />
+					<div class="audio">
+						<p>亲爱的旅人啊</p>
+						<audio src="images/亲爱的旅人啊.m4a" autoplay loop controls>
+						</audio>
+						<p></p>
+					</div>
+				</div>
+				<br /><br />
+				<h2>千与千寻简介</h2>
+				<br />
+				<hr color="#ccc9c3" />
+				<br /><br />
+				<div class="content_a" id="content_a">
+					<img src="images/juzhao3.jpg" align="left" />
+					<span class="span_a">
+						<br /><br />
+						&nbsp;&nbsp;&nbsp;&nbsp;《千与千寻》（千と千尋の神隠し)由宫崎骏执导并担任编剧，柊瑠美、入野自由、中村彰男、夏木真理等配音的动画电影。
+						<br /><br /><br />
+						&nbsp;&nbsp;&nbsp;&nbsp;于2001年7月20日在日本首映，于2019年6月21日在中国内地上映。
+						<br /><br /><br />
+						&nbsp;&nbsp;&nbsp;&nbsp;该片讲述了少女千寻（柊瑠美 配音）意外来到神灵异世界后，为了救爸爸妈妈，经历了很多磨难的故事。
+						<br /><br /><br />
+						&nbsp;&nbsp;&nbsp;&nbsp;2002年影片获第52届柏林国际电影节金熊奖；2003年获第75届奥斯卡金像奖最佳动画片。
+					</span>
+					<span class="span_a">
+						<h3>创作背景</h3>
+						<br /><br />
+						&nbsp;&nbsp;&nbsp;&nbsp;吉卜力工作室制作人铃木敏夫认为，在酒店工作的女性，就算原本是个性害羞的也会在为了得到金额报酬的情况下；而不断提升接待男性客户时的沟通能力，而前往酒店的男性也同样地会与和酒店女郎的互动之下，改变自己的沟通方式。
+						<br /><br />
+						&nbsp;&nbsp;&nbsp;&nbsp;这个想法给了宫崎骏一个灵感，想出让一个原本骄宠的女孩突然闯入到不知名的世界，为了生存而不得已和各种形形色色的人物互动，因而提升自己待人处事能力的故事。
+					</span>
+				</div>
+				<br /><br />
+				<h2>千与千寻宣传图</h2><br />
+				<hr color="#ccc9c3" /><br />
+				<div class="content_b" id="content_b">
+					<span><img src="images/juzhao.jpg" /></span>
+					<span><img src="images/juzhao2.jpg" /></span>
+					<span><img src="images/juzhao3.jpg" /></span>
+					<span><img src="images/juzhao4.jpg" /></span>
+					<span><img src="images/juzhao5.jpg" /></span>
+					<span><img src="images/juzhao6.jpg" /></span>
+					
+				</div>
+
+			</div>
+			<!--content end-->
+
+			<!--footer begin-->
+			<div class="footer">
+				<p>
+					<font size="2">
+						关于我们&nbsp;&nbsp;|&nbsp;&nbsp;联系我们&nbsp;&nbsp;|&nbsp;&nbsp;
+						意见建议&nbsp;&nbsp;|&nbsp;&nbsp;帮助中心&nbsp;&nbsp;|&nbsp;&nbsp;使用条款
+					</font>
+					<br />
+					<font size="1">
+						<font>免责声明：本网站部分内容由用户自行上传，如权利人发现存在误传其作品情形，请及时与本站联系。
+							<br />联系方式:大数据管理与应用2101班-吴子易-1008521140121。
+						</font>
+					</font>
+
+				</p>
+			</div>
+			<!--footer end-->
+		</div>
+	</body>
+</html>

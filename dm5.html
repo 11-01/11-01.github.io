@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>影片评价</title>
+	</head>
+	<link href="css/dm5.css " rel="stylesheet" />
+	<script type="text/javascript" src="js/pic.js"></script>
+	<link href="css/kj.css " rel="stylesheet" />
+	<script type="text/javascript" src="js/nav-menu.js"></script>
+	<script type="text/javascript" src="js/tab-xxk.js"></script>
+	<script>
+		function openTab(evt, tabName) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(tabName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+
+		// 默认打开第一个选项卡
+		document.getElementsByClassName("tablinks")[0].click();
+		setInterval(function() {
+			var activeTab = document.querySelector('.tablinks.active');
+			var nextTab = activeTab.nextElementSibling || activeTab.parentElement.firstElementChild;
+			nextTab.click();
+		}, 3000);
+	</script>
+	<body>
+		<div id="five">
+			<div class="header">
+				<div>
+					<img src="images/logo.jpg" width="400px " height="120px" />
+				</div>
+
+				<div>
+					<h3 class="gradient-text">&nbsp;&nbsp;&nbsp;&nbsp;千与千寻&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3>
+				</div>
+				<div class="login-register">
+					<a class="text-content" href="dm6.html">登录</a>
+					<a class="text-content">&nbsp;|&nbsp;</a>
+					<a class="text-content" href="dm6.html">注册</a>
+				</div>
+			</div>
+
+			<!--nav 导航begin-->
+			<div class="nav">
+				<ul id="bg">
+					<li class="btn">
+						<a href="dm1.html#one" target="_blank">🎟千寻首页</a>
+						<ul class=" dis">
+							<li><a href="dm1.html#content_a">千与千寻简介</a></li>
+							<li><a href="dm1.html#content_b">千与千寻宣传图</a></li>
+						</ul>
+					</li>
+					<li class="btn">
+						<a href="dm2.html#two" target="_blank">🎟剧情介绍</a>
+						<ul class="dis">
+							<li><a href="dm2.html#content_a">剧情简介</a></li>
+							<li><a href="dm2.html#content_b">精彩片段</a></li>
+						</ul>
+					</li>
+					<li class="btn">
+						<a href="dm3.html#three" target="_blank">🎟角色介绍</a>
+						<ul class="dis">
+							<li><a href="dm3.html#a1">小千</a></li>
+							<li><a href="dm3.html#a2">白龙</a></li>
+							<li><a href="dm3.html#a3">锅炉爷爷</a></li>
+							<li><a href="dm3.html#a4">汤婆婆</a></li>
+							<li><a href="dm3.html#a5">钱婆婆</a></li>
+							<li><a href="dm3.html#a6">无脸男</a></li>
+							<li><a href="dm3.html#a7">小玲</a></li>
+							<li><a href="dm3.html#a8">坊宝宝</a></li>
+							<li><a href="dm3.html#a9">河神</a></li>
+						</ul>
+					</li>
+					<li><a href="dm4.html#four" target="_blank">🎟影片意义</a></li>
+					<li><a href="dm5.html#five" target="_blank">🎟影片评价</a></li>
+					<li><a href="dm6.html#six" target="_blank">🎟影迷登录</a></li>
+				</ul>
+			</div>
+			<!--nav end-->
+
+			<!--banner begin-->
+			<div class="banner" id="banner">
+				<img src="images/banner.jpg" />
+			</div>
+			<!--banner end-->
+
+			<!--content begin-->
+			<div class="content" id="five">
+				<div class='content_a' id='content_a'>
+					<h2>影片评价</h2>
+					<br />
+					<span>
+						&nbsp;&nbsp;&nbsp;&nbsp;在万物重生的早晨，来到静寂无声的窗前，一切归零之后渐渐充实，不再去追寻海的彼岸，耀眼的宝物一直就在这里，在我身上就可以发现。《千与千寻》是宫崎骏献给孩子们的一部伟大的作品，孩子终将长大，在面对那个冒着黑烟，被湿气，欲望笼罩的大浴场般的社会时，是否能鼓起勇气，不忘初心，收获美好。
+					</span>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<i>（《海峡都市报》评）</i>
+					</p>
+					<br /><br />
+					<span>
+						&nbsp;&nbsp;&nbsp;&nbsp;影片通过千寻的故事，用深入浅出的方式讲述独自面对社会的成长历程，是宫崎骏献给所有年龄观众的一份“成长礼物”。当下正逢高考之际，对于即将踏入社会的考生而言，《千与千寻》也是一份极佳的“成人礼”。在成长的第一阶段，每个人都会经历进入陌生环境的慌张，就像千寻初入神隐世界的惊慌失措。在第二阶段，人们会遇到诱惑，做出抉择，就像在汤屋中，有人像无脸男一样沉沦变成怪物，也有人像千寻一样一直坚守本心。第三阶段是成长中无法逃避的离别，就像片中有去无回的人生火车，每个人只能陪你走一段路，当有人下车时只能挥手告别。
+					</span>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<i>（1905电影网 评）</i>
+					</p>
+					<br /><br />
+					<span>
+						&nbsp;&nbsp;&nbsp;&nbsp;除了思想上《千与千寻》可以跨越国界，带给不同文化背景的人以心灵上的慰藉，动画中所显示的日本民族的特色也是一大看点，即东西方文化的大融合。故事发生的场所“油屋”——一个极富日本古典特色的浴场，但是在里面又有电梯，电车，还有很多现代垃圾的出现。这正是典型的日本的写照：一方面不断吸收西方文化，另一方面又保留着本国最传统的古典特色。越是民族的越是世界的。一个民族的文化展示了一个独立民族的特色和个性美。在如今，人们除了关注跨文化传播和共同文明的发展，对于陌生和传统独到的民族文化更情有独钟，可以说是捕捉一种民族性的情愫。《千与千寻》可以风靡世界，与其独具匠心的日本文化背景的展示密不可分。
+					</span>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<i>（《今传媒》评）</i>
+					</p>
+				</div>
+				<h2>导演介绍</h2>
+				<div class='content_b' id='content_b'>
+					<div class="content_b1">
+						<div class='content_b_gqj'>
+							<img src='images/gqj.jpg' width='200px' height='200px' />
+							<p>宫崎骏</p>
+						</div>
+						<div class='content_b_gqj'>
+							<img src='images/hr.jpg' width='200px' height='200px' />
+							<p>哈尔的移动城堡</p>
+						</div>
+						<div class='content_b_gqj'>
+							<img src='images/xr.jpg' width='200px' height='200px' />
+							<p>借东西的小人阿莉埃提</p>
+						</div>
+						<div class='content_b_gqj'>
+							<img src='images/bn.jpg' width='200px' height='200px' />
+							<p>悬崖上的波妞</p>
+						</div>
+					</div>
+					<div class="content_b2">
+						<div class="content_tab">
+							<h2>宫崎骏</h2>
+							<div class="tab">
+								<button class="tablinks" onclick="openTab(event, 'Tab1')">个人简介</button>
+								<button class="tablinks" onclick="openTab(event, 'Tab2')">设计方法</button>
+								<button class="tablinks" onclick="openTab(event, 'Tab3')">设计理念</button>
+							</div>
+							<div id="Tab1" class="tabcontent">
+								<br />
+								<h3>个人简介</h3>
+								<br />
+								<p>
+									宫崎骏（Miyazaki Hayao，1941年1月5日－），日本著名动画导演、动画师及漫画家，出生于东京都文京区 。
+
+									1963年进入东映动画公司，1985年与高畑勋共同创立吉卜力工作室。2013年9月6日宣布引退。宫崎骏动画作品大多涉及人类与自然之间的关系、和平主义及女权运动，出品的动漫电影以精湛的技术、动人的故事和温暖的风格在世界动漫界独树一帜。
+
+									2014年8月，美国电影艺术与科学学院宣布，授予宫崎骏奥斯卡终身成就奖。洛杉矶时间2014年11月8日晚，第6届荣誉奥斯卡终身成就奖颁奖礼举行，宫崎骏被授予该项荣誉。
+								</p>
+							</div>
+							<div id="Tab2" class="tabcontent">
+								<br />
+								<h3>设计方法</h3>
+								<br />
+								<p>
+									宫崎骏动画电影中的色彩讲究西方色彩的科学性，在色彩变换上注重主观性的感受，主要以青、蓝、绿为色彩的基调，运用这三种色彩基调再现了自然和植物的原色。
+									通过东方的线的流畅、圆润、柔和以及西方绘画中的色彩的明暗、对比、调和，宫崎骏的画面犹如生活一样真实而亲切。简单的几笔线条就可勾勒出主人公的外貌轮廓，传达出人物纯真、善良、活泼的性格特征。
+								</p>
+							</div>
+							<div id="Tab3" class="tabcontent">
+								<br />
+								<h3>设计理念</h3>
+								<br />
+								<p>
+									宫崎骏是以动画电影的艺术形式来表达自己人生观、世界观的思想家式的动画大师。其动画作品的主题具有两个主要特征,首先是主题的独特性。在他的作品中充满了对生命存在形式与意义的探索,具有深厚的人文情怀,追求一种人与自然和谐相处境界的发展过程,每部作品均流露出浓厚的环保思想。宫崎骏的作品往往在优美画面和浪漫情调的背后深藏着一种沉重感。
+									宫崎骏的作品，多是天马行空之作，但含有深远的寓意。这份寓意，其实都是始自对现实的不满。宫崎骏就曾表示，东京（日本）碰口碰面都是拜金主义者，人们根本不肯放弃「金钱万能」的意识。为此，宫崎骏说：「我希望能够再次藉着更具深度的作品，拯救人类坠落的灵魂。」所以，宫崎骏的每部作品，题材虽然不同，但却将梦想、环保、人生、生存这些令人反思的讯息，融合其中。宫崎骏这份执著，止令全球人产生共呜，作品受到全世界的重视，连美国动画王国迪士尼，都要斟介宫崎骏的动画电影发行版权（亚洲地区除外）。
+								</p>
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+
+
+
+			</div>
+			<!--content end-->
+
+			<!--footer begin-->
+			<div class="footer">
+				<p>
+					<font size="2">
+						关于我们&nbsp;&nbsp;|&nbsp;&nbsp;联系我们&nbsp;&nbsp;|&nbsp;&nbsp;
+						意见建议&nbsp;&nbsp;|&nbsp;&nbsp;帮助中心&nbsp;&nbsp;|&nbsp;&nbsp;使用条款
+					</font>
+					<br />
+					<font size="1">
+						<font>免责声明：本网站部分内容由用户自行上传，如权利人发现存在误传其作品情形，请及时与本站联系。
+							<br />联系方式:大数据管理与应用2101班-吴子易-1008521140121。
+						</font>
+					</font>
+
+				</p>
+			</div>
+			<!--footer end-->
+		</div>
+	</body>
+</html>
