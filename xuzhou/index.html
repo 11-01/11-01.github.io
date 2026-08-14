@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>天津 → 徐州 | 两日旅行卡片攻略</title>
+<style>
+  :root{
+    --han-red:#B23A2E;
+    --han-red-deep:#8E2C22;
+    --paper:#F6EFE3;
+    --paper-card:#FFFBF4;
+    --ink:#2B2620;
+    --ink-soft:#6B6358;
+    --jade:#1E8449;
+    --gold:#C8992B;
+    --shadow:0 8px 24px rgba(80,55,30,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+    background:
+      radial-gradient(circle at 15% 10%, #fbe9d6 0, transparent 40%),
+      radial-gradient(circle at 85% 90%, #f3e2cf 0, transparent 45%),
+      var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    padding:24px 14px 60px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+
+  /* ===== 封面 ===== */
+  .hero{
+    position:relative;
+    background:linear-gradient(135deg,var(--han-red),var(--han-red-deep));
+    color:#fff;
+    border-radius:26px;
+    padding:34px 28px 30px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"徐";
+    position:absolute;right:-20px;bottom:-40px;
+    font-size:200px;font-weight:900;opacity:.12;font-family:"STKaiti","KaiTi",serif;
+  }
+  .hero .tag{
+    display:inline-block;background:rgba(255,255,255,.18);
+    padding:4px 12px;border-radius:20px;font-size:13px;letter-spacing:1px;
+  }
+  .hero h1{font-size:34px;margin:14px 0 6px;font-weight:800;letter-spacing:1px;}
+  .hero .sub{font-size:15px;opacity:.9;}
+  .hero .meta{
+    margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .hero .chip{
+    background:rgba(255,255,255,.15);border-radius:14px;
+    padding:8px 14px;font-size:13px;backdrop-filter:blur(4px);
+  }
+  .hero .chip b{font-size:16px;display:block;}
+
+  /* ===== 区块标题 ===== */
+  .sec-title{
+    display:flex;align-items:center;gap:10px;
+    margin:34px 4px 16px;font-size:21px;font-weight:800;color:var(--han-red-deep);
+  }
+  .sec-title .dot{width:10px;height:24px;background:var(--han-red);border-radius:4px;display:inline-block;}
+  .sec-title small{font-size:13px;color:var(--ink-soft);font-weight:500;margin-left:auto;}
+
+  /* ===== 通用卡片 ===== */
+  .card{
+    background:var(--paper-card);border-radius:20px;padding:20px 20px 18px;
+    box-shadow:var(--shadow);margin-bottom:14px;border:1px solid #efe4d3;
+  }
+
+  /* ===== Day 时间线 ===== */
+  .day-badge{
+    display:flex;align-items:center;gap:12px;margin-bottom:6px;
+  }
+  .day-badge .num{
+    background:var(--han-red);color:#fff;width:46px;height:46px;border-radius:14px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    font-weight:800;line-height:1;flex-shrink:0;
+  }
+  .day-badge .num span{font-size:11px;opacity:.85;font-weight:500;}
+  .day-badge .num b{font-size:20px;}
+  .day-badge .ttl{font-size:19px;font-weight:800;}
+  .day-badge .ttl em{font-style:normal;color:var(--han-red);font-size:14px;}
+
+  .timeline{position:relative;padding-left:26px;margin-top:14px;}
+  .timeline::before{
+    content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(var(--han-red),var(--gold));border-radius:2px;
+  }
+  .tl-item{position:relative;padding:0 0 16px;}
+  .tl-item:last-child{padding-bottom:2px;}
+  .tl-item::before{
+    content:"";position:absolute;left:-22px;top:5px;width:12px;height:12px;border-radius:50%;
+    background:#fff;border:3px solid var(--han-red);box-shadow:0 0 0 3px #f6efe3;
+  }
+  .tl-time{font-size:13px;font-weight:700;color:var(--han-red);}
+  .tl-head{font-size:16px;font-weight:800;margin:1px 0 3px;}
+  .tl-desc{font-size:14px;color:var(--ink-soft);}
+  .tl-tag{
+    display:inline-block;font-size:12px;background:#eef6ef;color:var(--jade);
+    padding:1px 9px;border-radius:10px;margin-top:5px;font-weight:600;
+  }
+  .tl-tag.free{background:#eef6ef;color:var(--jade);}
+  .tl-tag.blue{background:#eaf1fb;color:#2c6cb0;}
+
+  /* ===== 美食卡 ===== */
+  .food-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .food{
+    background:var(--paper-card);border-radius:16px;padding:14px 14px 12px;
+    box-shadow:var(--shadow);border:1px solid #efe4d3;
+  }
+  .food .emo{font-size:24px;}
+  .food h4{font-size:15px;margin:4px 0 2px;font-weight:800;}
+  .food .shop{font-size:12.5px;color:var(--han-red);font-weight:600;}
+  .food p{font-size:12.5px;color:var(--ink-soft);margin-top:4px;}
+  .food.star{grid-column:1 / -1;background:linear-gradient(100deg,#fff,#fdf3e6);}
+  .food.star h4{font-size:17px;}
+
+  /* ===== 预约卡 ===== */
+  .reserve{
+    background:linear-gradient(160deg,#fff,#fdeee6);border-left:6px solid var(--gold);
+  }
+  .reserve h3{font-size:17px;color:var(--gold);margin-bottom:8px;}
+  .reserve ul{list-style:none;font-size:13.5px;}
+  .reserve li{padding:5px 0 5px 22px;position:relative;}
+  .reserve li::before{content:"✦";position:absolute;left:0;color:var(--gold);}
+  .reserve .warn{margin-top:10px;background:#fbeae8;color:var(--han-red-deep);
+    font-size:13px;padding:8px 12px;border-radius:12px;font-weight:600;}
+
+  /* ===== 交通表 ===== */
+  .table{width:100%;border-collapse:collapse;font-size:13px;}
+  .table th,.table td{padding:9px 8px;text-align:left;border-bottom:1px solid #ece1d0;}
+  .table th{background:#f3e7d4;color:var(--ink);font-weight:700;border-radius:0;}
+  .table tr:last-child td{border-bottom:none;}
+  .table td b{color:var(--han-red-deep);}
+
+  /* ===== 费用卡 ===== */
+  .cost{display:flex;flex-wrap:wrap;gap:12px;}
+  .cost .item{flex:1;min-width:120px;background:var(--paper-card);border-radius:16px;
+    padding:14px;text-align:center;box-shadow:var(--shadow);border:1px solid #efe4d3;}
+  .cost .item .lab{font-size:12.5px;color:var(--ink-soft);}
+  .cost .item .val{font-size:18px;font-weight:800;color:var(--han-red);margin-top:3px;}
+  .cost .total{flex-basis:100%;background:var(--han-red);color:#fff;border-radius:16px;
+    padding:14px;text-align:center;font-weight:800;font-size:17px;box-shadow:var(--shadow);}
+
+  /* ===== 注意卡 ===== */
+  .note{background:#fff8ec;border-left:6px solid var(--han-red);}
+  .note ul{list-style:none;}
+  .note li{font-size:13.5px;padding:6px 0 6px 24px;position:relative;border-bottom:1px dashed #ecdcc2;}
+  .note li:last-child{border-bottom:none;}
+  .note li::before{content:"⚠";position:absolute;left:0;top:6px;}
+
+  .footer{text-align:center;color:var(--ink-soft);font-size:12px;margin-top:36px;}
+  .footer b{color:var(--han-red);}
+
+  @media(max-width:480px){
+    .food-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:28px;}
+  }
+  @media print{
+    body{background:#fff;padding:0;}
+    .card,.food,.cost .item,.cost .total,.hero{box-shadow:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- 封面 -->
+  <div class="hero">
+    <span class="tag">🗺️ 两日微度假 · 汉风彭城</span>
+    <h1>天津 → 徐州</h1>
+    <div class="sub">老城烟火 + 山水寺庙，吃透这座楚汉古城</div>
+    <div class="meta">
+      <div class="chip"><b>8.29–8.30</b>出行日期</div>
+      <div class="chip"><b>2 天</b>行程时长</div>
+      <div class="chip"><b>≈3h</b>高铁直达</div>
+      <div class="chip"><b>¥500–700</b>当地花费</div>
+    </div>
+  </div>
+
+  <!-- Day1 -->
+  <div class="sec-title"><span class="dot"></span>Day 1 老城文化 + 吃 <small>8月29日 周六</small></div>
+
+  <div class="card">
+    <div class="day-badge">
+      <div class="num"><span>D</span><b>1</b></div>
+      <div class="ttl">老城慢逛 · 从一碗炸牛排开始 <em>｜ 全天 0 门票</em></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">上午 · 出发</div>
+        <div class="tl-head">天津 → 徐州东站</div>
+        <div class="tl-desc">高铁约 3 小时，出站坐地铁 1 号线直达彭城广场附近，先去酒店放行李。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">临近中午 · 午饭</div>
+        <div class="tl-head">富国街</div>
+        <div class="tl-desc">炸牛排、油烫老鸭、枣子糕——路上扫一圈就能吃饱。</div>
+        <span class="tl-tag free">免费逛 · 步行 5min（1号线彭城广场站）</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">午后 · 拍照</div>
+        <div class="tl-head">醒狮小区</div>
+        <div class="tl-desc">从富国街直接走过去，老城区拍照很出片，15 分钟逛完足够。</div>
+        <span class="tl-tag free">免费 · 步行 8min</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">下午 · 三连逛</div>
+        <div class="tl-head">户部山 → 戏马台 → 回龙窝</div>
+        <div class="tl-desc">三个点紧挨着：户部山是明清老宅子群；戏马台登高看老城全景；回龙窝文艺小街，喝杯咖啡歇脚。</div>
+        <span class="tl-tag free">全免费 · 2号线户部山站出站即到</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">晚上 · 夜生活</div>
+        <div class="tl-head">壹捌夜市</div>
+        <div class="tl-desc">烧烤小吃饮品都有，夜生活氛围拉满。</div>
+        <span class="tl-tag free">免费逛 · 1号线彭城广场站步行 5min</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day2 -->
+  <div class="sec-title"><span class="dot"></span>Day 2 山水 + 寺庙 <small>8月30日 周日</small></div>
+
+  <div class="card">
+    <div class="day-badge">
+      <div class="num"><span>D</span><b>2</b></div>
+      <div class="ttl">禅意 + 湖山 · 以日落收尾 <em>｜ 仅博物馆需预约</em></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">早起 · 打车</div>
+        <div class="tl-head">宝莲寺</div>
+        <div class="tl-desc">打车约 20 分钟。通天阁和天冠弥勒佛很震撼，免费不用预约，门口免费领三支香。</div>
+        <span class="tl-tag free">免费 · 3号线蟠桃站出站需走一段</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">上午 · 看国宝</div>
+        <div class="tl-head">徐州博物馆 + 乾隆行宫</div>
+        <div class="tl-desc">金缕玉衣必看，整体逛 1.5–2 小时，旁边乾隆行宫一起逛。⚠️ 唯一需提前预约！</div>
+        <span class="tl-tag blue">需预约 · 2号线师大云龙校区站步行 10min</span>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">下午 · 登高</div>
+        <div class="tl-head">云龙山 → 云龙湖</div>
+        <div class="tl-desc">爬云龙山 20 分钟登顶不费劲，下山顺路走云龙湖看日落收尾。</div>
+        <span class="tl-tag free">免费 · 2号线师大云龙校区站步行 15min</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 必吃 -->
+  <div class="sec-title"><span class="dot"></span>🍜 必吃清单 <small>不撸串等于白来</small></div>
+  <div class="food-grid">
+    <div class="food star">
+      <div class="emo">🍢</div>
+      <h4>烧烤（徐州灵魂）</h4>
+      <div class="shop">方方烧烤（幸福路店）/ 响虎烧烤</div>
+      <p>羊肉白串蘸甜醋是徐州特色，来徐州不撸串等于白来。</p>
+    </div>
+    <div class="food">
+      <div class="emo">🥩</div>
+      <h4>把子肉</h4>
+      <div class="shop">怪味鱼家</div>
+      <p>团购八九块一块，浇汁拌饭很香。</p>
+    </div>
+    <div class="food">
+      <div class="emo">🍗</div>
+      <h4>地锅鸡</h4>
+      <div class="shop">本地老馆子</div>
+      <p>贴饼子蘸汤比肉还香，尽量找本地老馆子。</p>
+    </div>
+    <div class="food">
+      <div class="emo">🍜</div>
+      <h4>米线</h4>
+      <div class="shop">阿喆米线（云龙湖边）</div>
+      <p>逛完湖顺便吃一碗，清爽顺口。</p>
+    </div>
+    <div class="food">
+      <div class="emo">🐸</div>
+      <h4>蛙鱼*</h4>
+      <div class="shop">街头小吃</div>
+      <p>山芋凉粉配甜醋辣酱，夏天吃很解腻。</p>
+    </div>
+    <div class="food">
+      <div class="emo">🥣</div>
+      <h4>饣它汤*</h4>
+      <div class="shop">传统早餐</div>
+      <p>配八股油条，早上来一碗很满足。</p>
+    </div>
+  </div>
+
+  <!-- 预约 -->
+  <div class="sec-title"><span class="dot"></span>🎟️ 预约提醒 <small>只有 1 个地方要预约</small></div>
+  <div class="card reserve">
+    <h3>徐州博物馆 —— 唯一需提前预约</h3>
+    <ul>
+      <li>微信搜「徐州博物馆」公众号，菜单栏预约入口，免费。</li>
+      <li>可提前 7 天预约，晚上 8 点放票，暑期旺季建议开抢。</li>
+      <li>周一闭馆，你去的周六日不受影响。</li>
+      <li>开放 9:00–17:00，16:00 停止入馆，入馆刷身份证。</li>
+      <li>其他景点全部免费且不用预约：户部山、戏马台、回龙窝、宝莲寺、云龙山、云龙湖、富国街、壹捌夜市，直接去。</li>
+    </ul>
+    <div class="warn">⛔ 别在第三方平台买「代预约」！博物馆免费，都是骗人的。</div>
+  </div>
+
+  <!-- 交通 -->
+  <div class="sec-title"><span class="dot"></span>🚇 交通速查 <small>地铁 2–4 元</small></div>
+  <div class="card">
+    <table class="table">
+      <tr><th>景点</th><th>最近地铁</th><th>步行</th></tr>
+      <tr><td>富国街</td><td>1号线 彭城广场站</td><td><b>5 分钟</b></td></tr>
+      <tr><td>醒狮小区</td><td>1号线 彭城广场站</td><td>8 分钟</td></tr>
+      <tr><td>户部山 / 戏马台 / 回龙窝</td><td>2号线 户部山站</td><td><b>出站即到</b></td></tr>
+      <tr><td>博物馆 / 乾隆行宫</td><td>2号线 师大云龙校区站</td><td>10 分钟</td></tr>
+      <tr><td>云龙山 / 云龙湖</td><td>2号线 师大云龙校区站</td><td>15 分钟</td></tr>
+      <tr><td>壹捌夜市</td><td>1号线 彭城广场站</td><td>5 分钟</td></tr>
+      <tr><td>宝莲寺</td><td>3号线 蟠桃站</td><td>出站还需走一段 · <b>建议打车</b></td></tr>
+    </table>
+    <p style="font-size:12.5px;color:var(--ink-soft);margin-top:10px;">
+      到徐州：天津→徐州东站高铁约 3 小时，出站地铁 1 号线直达市中心。除宝莲寺建议打车，其余步行+地铁搞定。
+    </p>
+  </div>
+
+  <!-- 住宿 + 费用 -->
+  <div class="sec-title"><span class="dot"></span>🏨 住宿 & 💰 费用</div>
+  <div class="card">
+    <p style="font-size:14px;"><b style="color:var(--han-red);">住宿：</b>推荐住彭城广场/苏宁广场附近，地铁交汇站，步行可达富国街和回龙窝，吃喝出行方便，两三百能住到不错的。周末价略高，建议提前几天在美团/携程订。</p>
+    <div class="cost" style="margin-top:14px;">
+      <div class="item"><div class="lab">住宿/晚</div><div class="val">¥200–300</div></div>
+      <div class="item"><div class="lab">吃饭/天</div><div class="val">¥80–120</div></div>
+      <div class="item"><div class="lab">市内交通</div><div class="val">¥30–40</div></div>
+      <div class="item"><div class="lab">门票</div><div class="val">¥0</div></div>
+      <div class="total">两天当地合计 ≈ ¥500–700（不含高铁大交通）</div>
+    </div>
+  </div>
+
+  <!-- 注意 -->
+  <div class="sec-title"><span class="dot"></span>⚠️ 注意事项</div>
+  <div class="card note">
+    <ul>
+      <li>8 月底徐州又热又晒，户外景点尽量上午早去或下午四点半后去，中午安排博物馆吹空调。</li>
+      <li>景区门口有人扮「孙悟空」拉合照收费，别理。</li>
+      <li>富国街街头十块钱的椰子慎买，有人说发酸还被骂。</li>
+      <li>云龙湖傍晚风大，带件薄外套。</li>
+      <li>身份证随身带，博物馆入馆要刷。</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    喜袜袜替主人整理 🐕 · <b>天津 → 徐州 两日攻略</b> · 祝你撸串快乐，日落好看
+  </div>
+
+</div>
+</body>
+</html>
