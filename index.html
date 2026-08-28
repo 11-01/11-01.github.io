@@ -1,17 +1,1162 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>wzyspace.online</title>
-    <style>body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:#f7f7fb;color:#111;margin:2rem}a{color:#0366d6}</style>
-  </head>
-  <body>
-    <h1>wzyspace.online</h1>
-    <p>这是一个 GitHub Pages 测试页面，网站已成功部署到仓库 <code>11-01/11-01.github.io</code> 的 main 分支根目录。</p>
-    <p>注意：如果页面仍通过 HTTP（非 HTTPS）访问，请稍等，GitHub 正在为该域名签发 TLS 证书（通常几分钟到 24 小时）。</p>
-    <hr>
-    <p>如果你想替换此默认页面，请把你的网站文件（例如 index.html、CSS、JS、图片等）推送到仓库的 main 分支根目录或配置构建流程来生成这些文件。</p>
-    <p>查看仓库：<a href="https://github.com/11-01/11-01.github.io">11-01/11-01.github.io</a></p>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="吉娃娃风格个人工作台 · 大眼睛、小身材、倔强又萌 · 常用站点入口导航">
+<title>吉娃娃工作台 · 常用入口导航</title>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M28 52 L16 12 L46 32 Z' fill='%23C69C6D'/><path d='M72 52 L84 12 L54 32 Z' fill='%23C69C6D'/><circle cx='50' cy='58' r='34' fill='%23EFD3A8'/><circle cx='38' cy='54' r='7' fill='%234A3B32'/><circle cx='62' cy='54' r='7' fill='%234A3B32'/><ellipse cx='50' cy='68' rx='5' ry='4' fill='%234A3B32'/><path d='M43 74 q7 7 14 0' stroke='%234A3B32' stroke-width='3' fill='none' stroke-linecap='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+<style>
+/* ============ 变量：暖棕治愈系色卡（吉娃娃棕） ============ */
+:root{
+  --bg-color:#FFF8F0;        /* 奶白背景 */
+  --primary:#C69C6D;         /* 吉娃娃棕 */
+  --secondary:#8B5E3C;       /* 深棕：文字/边框 */
+  --accent:#FFB347;          /* 暖橙点缀 */
+  --text-main:#4A3B32;       /* 正文色 */
+  --text-light:#8B7355;      /* 次要文字 */
+  --card-bg:#FFFDF8;
+  --line:#E9D9C2;
+  --collar:#E85D4A;          /* 项圈红（倔强的小点缀） */
+  --ink:#5A4232;             /* 插画描边深棕 */
+  --fur:#EFD3A8;             /* 吉娃娃毛色 */
+  --shadow:0 10px 30px rgba(139,94,60,.12);
+  --radius:26px;
+  --title-font:'Baloo 2','ZCOOL KuaiLe','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --body-font:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+}
+
+/* ============ 基础 ============ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body-font);
+  background:var(--bg-color);
+  color:var(--text-main);
+  line-height:1.75;
+  overflow-x:hidden;
+  /* 鼠标指针：小爪印（深棕） */
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'><g fill='%238B5E3C'><ellipse cx='13' cy='17' rx='6' ry='5'/><ellipse cx='5.5' cy='10' rx='3' ry='3.6' transform='rotate(-18 5.5 10)'/><ellipse cx='10.5' cy='6' rx='3' ry='3.6'/><ellipse cx='15.5' cy='6' rx='3' ry='3.6'/><ellipse cx='20.5' cy='10' rx='3' ry='3.6' transform='rotate(18 20.5 10)'/></g></svg>") 13 13, auto;
+}
+a,button,.card,[role="button"]{
+  /* 可点击处：暖橙爪印 */
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'><g fill='%23F09A2E'><ellipse cx='13' cy='17' rx='6' ry='5'/><ellipse cx='5.5' cy='10' rx='3' ry='3.6' transform='rotate(-18 5.5 10)'/><ellipse cx='10.5' cy='6' rx='3' ry='3.6'/><ellipse cx='15.5' cy='6' rx='3' ry='3.6'/><ellipse cx='20.5' cy='10' rx='3' ry='3.6' transform='rotate(18 20.5 10)'/></g></svg>") 13 13, pointer;
+}
+img,svg{display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:var(--accent);color:#fff}
+
+/* 背景：极淡的爪印纹理 */
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150'><g fill='%23C69C6D' opacity='.055' transform='rotate(18 75 75)'><ellipse cx='75' cy='85' rx='13' ry='11'/><ellipse cx='61' cy='68' rx='6' ry='7.5'/><ellipse cx='72' cy='63' rx='6' ry='7.5'/><ellipse cx='83' cy='63' rx='6' ry='7.5'/><ellipse cx='94' cy='68' rx='6' ry='7.5'/></g></svg>");
+  background-size:150px 150px;
+}
+
+/* ============ Loading：吉娃娃追骨头 ============ */
+#loader{
+  position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;
+  background:var(--bg-color);
+  transition:opacity .6s ease,visibility .6s;
+}
+#loader.hide{opacity:0;visibility:hidden}
+.loader-scene{text-align:center;width:min(340px,86vw)}
+.loader-dog{width:190px;margin:0 auto;position:relative}
+.loader-dog .bone{
+  position:absolute;right:-38px;top:-16px;width:52px;color:var(--secondary);
+  animation:floaty 1.1s ease-in-out infinite;
+}
+.loader-track{
+  display:flex;justify-content:center;gap:26px;margin-top:6px;color:var(--primary);
+}
+.loader-track svg{width:20px;opacity:0;animation:pawIn 1.2s infinite}
+.loader-track svg:nth-child(1){animation-delay:0s}
+.loader-track svg:nth-child(2){animation-delay:.15s}
+.loader-track svg:nth-child(3){animation-delay:.3s}
+.loader-track svg:nth-child(4){animation-delay:.45s}
+.loader-track svg:nth-child(5){animation-delay:.6s}
+.loader-track svg:nth-child(6){animation-delay:.75s}
+@keyframes pawIn{0%{opacity:0;transform:translateX(8px)}40%{opacity:.9}100%{opacity:0;transform:translateX(-8px)}}
+.loader-txt{
+  margin-top:18px;font-family:var(--title-font);font-size:1.05rem;color:var(--text-light);
+  letter-spacing:.12em;
+}
+
+/* 奔跑的小狗动画部件 */
+.run-body{animation:bob .38s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.leg{transform-box:fill-box;transform-origin:50% 8%;animation:legswing .34s ease-in-out infinite alternate}
+.leg.l2{animation-delay:.17s}
+.leg.l3{animation-delay:.34s}
+.leg.l4{animation-delay:.51s}
+@keyframes legswing{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}
+.run-tail{transform-box:fill-box;transform-origin:0% 100%;animation:tailwag .3s ease-in-out infinite}
+@keyframes tailwag{from{transform:rotate(-14deg)}to{transform:rotate(16deg)}}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-8px) rotate(6deg)}}
+
+/* ============ 顶部导航：胶囊玻璃 ============ */
+nav{
+  position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:100;
+  width:min(1060px,calc(100% - 28px));
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:9px 12px 9px 14px;
+  background:rgba(255,248,240,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1.5px solid rgba(198,156,109,.38);border-radius:999px;
+  box-shadow:0 6px 24px rgba(139,94,60,.10);
+}
+.nav-brand{display:flex;align-items:center;gap:11px}
+.nav-logo{width:44px;flex-shrink:0;transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.nav-brand:hover .nav-logo{transform:rotate(-7deg) scale(1.06)}
+.nav-title{line-height:1.2}
+.nav-title b{font-family:var(--title-font);font-size:1.06rem;color:var(--text-main);display:block}
+.nav-title small{font-size:.62rem;letter-spacing:.22em;color:var(--text-light);font-weight:500}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a{
+  padding:7px 15px;border-radius:999px;font-size:.92rem;font-weight:500;color:var(--text-light);
+  transition:.25s;
+}
+.nav-links a:hover{color:#fff;background:var(--primary)}
+.nav-links a.nav-cta{
+  background:var(--secondary);color:#FFF6E8;font-weight:700;margin-left:6px;
+  box-shadow:0 4px 0 #6E4527;
+}
+.nav-links a.nav-cta:hover{background:var(--primary);transform:translateY(-2px);box-shadow:0 6px 0 #A57C4E}
+
+/* ============ Hero ============ */
+.hero{
+  position:relative;
+  max-width:1080px;margin:0 auto;padding:132px 24px 40px;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 16px;border-radius:999px;
+  background:#fff;border:1.5px dashed var(--primary);color:var(--secondary);
+  font-size:.85rem;font-weight:500;
+}
+.badge svg{width:15px;color:var(--accent)}
+.hero h1{
+  font-family:var(--title-font);font-weight:800;
+  font-size:clamp(2.1rem,5.2vw,3.3rem);line-height:1.22;
+  margin:20px 0 6px;color:var(--text-main);
+}
+.hero h1 .hi{color:var(--primary)}
+.hero .sub{color:var(--text-light);font-size:clamp(.98rem,2vw,1.08rem);max-width:34em;margin-bottom:28px}
+.hero .sub b{color:var(--secondary)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+.btn-main{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 30px;border-radius:999px;
+  background:var(--primary);color:#fff;font-weight:700;font-size:1.02rem;
+  box-shadow:0 5px 0 #A57C4E;transition:.25s;
+}
+.btn-main svg{width:19px}
+.btn-main:hover{background:var(--accent);box-shadow:0 7px 0 #E0952B;transform:translateY(-3px)}
+.btn-main:hover svg{transform:rotate(-18deg) scale(1.15)}
+.btn-main svg{transition:.25s}
+/* 骨头形状按钮 */
+.btn-bone{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  width:172px;height:66px;color:#FFF6E8;
+  filter:drop-shadow(0 4px 0 #C69C6D) drop-shadow(0 10px 14px rgba(139,94,60,.22));
+  transition:.25s;font-weight:700;
+}
+.btn-bone .bone-bg{position:absolute;inset:0;width:100%;height:100%;color:var(--card-bg);transition:.25s}
+.btn-bone span{position:relative;z-index:1;color:var(--secondary);font-size:1.02rem}
+.btn-bone:hover{transform:translateY(-3px) rotate(-2deg)}
+.btn-bone:hover .bone-bg{color:var(--accent)}
+.hero-hint{
+  margin-top:18px;display:inline-flex;align-items:center;gap:7px;
+  font-size:.78rem;color:var(--text-light);
+}
+.hero-hint svg{width:13px;color:var(--accent);flex-shrink:0}
+.hero-fig{position:relative;display:flex;justify-content:center}
+.hero-dog{width:min(360px,78vw);animation:breathe 3.6s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.016)}}
+.hero-dog .head{transform-box:fill-box;transform-origin:50% 78%;transition:transform .4s cubic-bezier(.3,1.5,.5,1)}
+.hero-dog:hover .head{transform:rotate(-5deg) translateY(2px)}
+.hero-dog .eyes{transform-box:fill-box;transform-origin:center}
+.hero-dog .eyelids{transform-box:fill-box;transform-origin:50% 100%;animation:sleepyBlink 4.8s ease-in-out infinite}
+@keyframes sleepyBlink{0%,89%,100%{transform:translateY(0)}93%,96%{transform:translateY(17px)}}
+.hero-dog .tongue{transform-box:fill-box;transform-origin:70% 5%;animation:tongueWig 1.7s ease-in-out infinite}
+@keyframes tongueWig{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(5deg)}}
+.hero-dog .ear-l{transform-box:fill-box;transform-origin:75% 95%;animation:earwig 3.8s ease-in-out infinite}
+.hero-dog .ear-r{transform-box:fill-box;transform-origin:25% 95%;animation:earwig 5.9s ease-in-out infinite .8s}
+@keyframes earwig{0%,88%,100%{transform:rotate(0)}91%{transform:rotate(-6deg)}94%{transform:rotate(5deg)}97%{transform:rotate(-3deg)}}
+.hero-dog .tail{transform-box:fill-box;transform-origin:10% 92%;animation:tailwag2 .8s ease-in-out infinite}
+@keyframes tailwag2{from{transform:rotate(-7deg)}to{transform:rotate(9deg)}}
+.hero-dog .tag{transform-box:fill-box;transform-origin:50% 0;animation:tagSwing 2.8s ease-in-out infinite}
+@keyframes tagSwing{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+.hero-dog-stage{position:relative;display:grid;place-items:center;aspect-ratio:1/1}
+.hero-dog-cutout{
+  width:112%;height:112%;object-fit:contain;
+  filter:drop-shadow(0 13px 11px rgba(90,66,50,.15));
+  transform-origin:50% 84%;animation:mascotSway 5.2s ease-in-out infinite;
+  transition:transform .35s cubic-bezier(.3,1.5,.5,1),filter .35s;
+}
+@keyframes mascotSway{
+  0%,100%{transform:translateY(0) rotate(-.45deg)}
+  50%{transform:translateY(-4px) rotate(.45deg)}
+}
+.hero-dog-stage:hover .hero-dog-cutout{
+  animation:none;transform:translateY(-5px) rotate(-3deg) scale(1.015);
+  filter:drop-shadow(0 17px 14px rgba(90,66,50,.18));
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-dog,.hero-dog-cutout{animation:none!important}
+}
+/* hero 漂浮装饰 */
+.float-deco{position:absolute;color:var(--primary);opacity:.5;animation:floaty 5.5s ease-in-out infinite}
+.float-deco.f1{width:30px;top:2%;left:6%;animation-delay:.2s}
+.float-deco.f2{width:22px;top:64%;left:0;animation-delay:1.4s;color:var(--accent)}
+.float-deco.f3{width:38px;top:10%;right:2%;animation-delay:.8s}
+.float-deco.f4{width:26px;bottom:-2%;right:10%;animation-delay:2s;color:var(--accent)}
+
+/* ============ 骨头波浪分隔线 ============ */
+.divider{
+  display:flex;align-items:center;justify-content:center;gap:16px;
+  max-width:900px;margin:26px auto 0;padding:0 20px;color:var(--primary);
+}
+.divider .d-paw{width:20px;opacity:.75}
+.divider .d-bone{width:44px;color:var(--accent)}
+.divider .d-wave{width:min(340px,42vw);height:22px;color:var(--primary)}
+
+/* ============ 区块通用 ============ */
+main{max-width:1080px;margin:0 auto;padding:30px 24px 20px}
+section{scroll-margin-top:96px}
+.sec-head{text-align:center;margin-bottom:36px}
+.sec-head .sec-kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--title-font);color:var(--secondary);
+  font-size:.95rem;letter-spacing:.1em;margin-bottom:8px;
+}
+.sec-head .sec-kicker svg{width:16px;color:var(--accent)}
+.sec-head h2{font-family:var(--title-font);font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--text-main)}
+.sec-head p{color:var(--text-light);margin-top:8px;font-size:.95rem}
+
+/* ============ 工作台卡片 ============ */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{
+  position:relative;display:flex;flex-direction:column;
+  background:var(--card-bg);border:2px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px 58px;box-shadow:var(--shadow);
+  transition:transform .3s cubic-bezier(.3,1.4,.5,1),border-color .3s,box-shadow .3s;
+  overflow:hidden;
+}
+.card::before{ /* 顶部色条 */
+  content:"";position:absolute;top:0;left:22px;right:22px;height:5px;border-radius:0 0 6px 6px;
+  background:var(--c,var(--primary));opacity:.85;
+}
+.card:hover{transform:translateY(-8px) rotate(-.6deg);border-color:var(--primary);box-shadow:0 18px 40px rgba(139,94,60,.18)}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.card-icon{
+  width:62px;height:62px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  background:radial-gradient(circle at 32% 28%,var(--c-l,#E8B77E),var(--c,var(--primary)));
+  box-shadow:0 6px 14px rgba(139,94,60,.22);
+  transition:.35s cubic-bezier(.3,1.6,.5,1);
+}
+.card:hover .card-icon{transform:rotate(-8deg) scale(1.1)}
+.card-icon svg{width:30px;height:30px}
+.card-tag{
+  font-size:.74rem;font-weight:700;color:var(--secondary);
+  background:#FFF1DD;border:1px solid #F0DDBE;border-radius:999px;padding:4px 12px;letter-spacing:.06em;
+}
+.card h3{font-family:var(--title-font);font-size:1.28rem;color:var(--text-main);margin-bottom:4px}
+.card h3 small{display:block;font-size:.72rem;color:var(--text-light);letter-spacing:.16em;font-weight:500;margin-top:2px}
+.card-desc{font-size:.92rem;color:var(--text-light);margin:8px 0 14px}
+.card-points{display:flex;flex-direction:column;gap:7px;margin-bottom:6px}
+.card-points li{
+  position:relative;padding-left:24px;font-size:.88rem;color:var(--text-main);
+}
+.card-points li svg{ /* 爪印代替小圆点 */
+  position:absolute;left:0;top:50%;transform:translateY(-52%) rotate(-14deg);
+  width:15px;color:var(--c,var(--primary));
+}
+.card-go{
+  margin-top:auto;display:inline-flex;align-items:center;gap:8px;
+  font-weight:700;color:var(--secondary);font-size:.92rem;transition:.25s;
+}
+.card-go svg{width:16px;transition:.25s}
+.card:hover .card-go{color:var(--collar)}
+.card:hover .card-go svg{transform:translateX(5px) rotate(-14deg)}
+/* 吉娃娃探头（hover 从卡片底部探出） */
+.card-peek{
+  position:absolute;bottom:-4px;right:16px;width:74px;
+  transform:translateY(88%);opacity:0;transition:.42s cubic-bezier(.3,1.5,.5,1);
+  pointer-events:none;filter:drop-shadow(0 -3px 6px rgba(139,94,60,.16));
+}
+.card:hover .card-peek{transform:translateY(34%);opacity:1}
+
+/* ============ 今日速览 ============ */
+.today-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.t-card{
+  background:var(--card-bg);border:2px solid var(--line);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;
+  transition:transform .3s,border-color .3s;
+}
+.t-card:hover{transform:translateY(-5px);border-color:var(--primary)}
+.t-label{display:flex;align-items:center;gap:9px;font-weight:700;color:var(--secondary);font-size:.95rem}
+.t-label svg{width:18px;color:var(--accent)}
+.t-clock{
+  font-family:var(--title-font);font-size:2.7rem;font-weight:800;line-height:1.1;
+  color:var(--text-main);font-variant-numeric:tabular-nums;
+}
+.t-clock small{font-size:1.1rem;color:var(--text-light);font-weight:600}
+.t-date{color:var(--text-light);font-size:.9rem}
+.t-count{
+  font-family:var(--title-font);font-size:2.7rem;font-weight:800;line-height:1.1;color:var(--collar);
+}
+.t-count small{font-size:1.1rem;color:var(--text-light);font-weight:600}
+.t-note{color:var(--text-light);font-size:.9rem}
+.trip-progress{height:9px;background:#F3E6D2;border-radius:99px;overflow:hidden}
+.trip-progress i{
+  display:block;height:100%;border-radius:99px;width:0%;
+  background:linear-gradient(90deg,var(--primary),var(--accent));
+  transition:width 1.2s cubic-bezier(.3,.9,.3,1);
+}
+.t-quote{
+  font-family:var(--title-font);font-size:1.12rem;color:var(--text-main);
+  min-height:3.6em;display:flex;align-items:center;
+}
+.t-quote.flip{animation:quotein .45s cubic-bezier(.3,1.5,.5,1)}
+@keyframes quotein{0%{opacity:0;transform:translateY(10px) scale(.96)}100%{opacity:1;transform:none}}
+.btn-woof{
+  align-self:flex-start;display:inline-flex;align-items:center;gap:8px;
+  border:2px solid var(--primary);background:#fff;color:var(--secondary);
+  padding:7px 18px;border-radius:999px;font-weight:700;font-size:.88rem;
+  transition:.25s;font-family:inherit;
+}
+.btn-woof svg{width:15px}
+.btn-woof:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
+
+/* ============ 关于 ============ */
+.about-box{
+  background:linear-gradient(150deg,#FFF3E2,#FFF9EF);
+  border:2px dashed var(--primary);border-radius:var(--radius);
+  padding:34px 34px 28px;position:relative;overflow:hidden;
+}
+.about-box>p{max-width:56em;color:var(--text-main);font-size:.98rem}
+.about-traits{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.trait{
+  background:#fff;border-radius:20px;padding:18px 18px 16px;
+  box-shadow:0 6px 16px rgba(139,94,60,.08);
+}
+.trait b{display:flex;align-items:center;gap:9px;font-family:var(--title-font);color:var(--secondary);font-size:1.02rem}
+.trait b svg{width:17px;color:var(--accent)}
+.trait p{font-size:.85rem;color:var(--text-light);margin-top:6px}
+.about-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.about-links a{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1.5px solid var(--line);border-radius:999px;
+  padding:7px 16px;font-size:.86rem;color:var(--secondary);font-weight:500;transition:.25s;
+}
+.about-links a:hover{border-color:var(--primary);background:var(--primary);color:#fff}
+.about-links a svg{width:14px}
+
+/* ============ 页脚 ============ */
+footer{padding:34px 20px 120px;text-align:center;color:var(--text-light);font-size:.86rem}
+.paw-walk{display:flex;justify-content:center;align-items:center;gap:14px;color:var(--primary);margin-bottom:16px}
+.paw-walk svg{width:18px}
+.paw-walk svg:nth-child(1){opacity:.25;transform:rotate(8deg)}
+.paw-walk svg:nth-child(2){opacity:.4;transform:rotate(-6deg)}
+.paw-walk svg:nth-child(3){opacity:.55;transform:rotate(10deg)}
+.paw-walk svg:nth-child(4){opacity:.7;transform:rotate(-8deg)}
+.paw-walk svg:nth-child(5){opacity:.9;transform:rotate(6deg)}
+.paw-walk svg:nth-child(6){opacity:1;width:24px;color:var(--secondary)}
+footer b{color:var(--secondary)}
+footer .dog-credit{margin-top:6px;font-size:.8rem}
+
+/* ============ 回到顶部：吉娃娃头像按钮 ============ */
+#backTop{
+  position:fixed;right:22px;bottom:22px;z-index:90;
+  width:60px;height:60px;border-radius:50%;border:none;
+  background:#fff;box-shadow:0 8px 22px rgba(139,94,60,.25),0 0 0 2px var(--line);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transform:translateY(16px);
+  transition:.35s cubic-bezier(.3,1.4,.5,1);
+}
+#backTop.show{opacity:1;visibility:visible;transform:none}
+#backTop:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(139,94,60,.3),0 0 0 2px var(--primary)}
+#backTop svg{width:40px;transition:.3s}
+#backTop:hover svg{animation:hop .5s ease}
+@keyframes hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-7px) rotate(-8deg)}70%{transform:translateY(0) rotate(5deg)}}
+#backTop .tip{
+  position:absolute;right:70px;top:50%;transform:translateY(-50%) translateX(6px);
+  white-space:nowrap;background:var(--secondary);color:#FFF6E8;
+  font-size:.78rem;font-weight:700;padding:5px 13px;border-radius:999px;
+  opacity:0;transition:.25s;pointer-events:none;
+}
+#backTop:hover .tip{opacity:1;transform:translateY(-50%)}
+
+/* ============ 微信/小程序环境：复制链接引导弹层 ============ */
+.link-modal{
+  position:fixed;inset:0;z-index:500;display:flex;align-items:center;justify-content:center;
+  padding:22px;visibility:hidden;opacity:0;transition:opacity .25s,visibility .25s;
+}
+.link-modal.open{visibility:visible;opacity:1}
+.lm-mask{position:absolute;inset:0;background:rgba(74,59,50,.52)}
+.lm-card{
+  position:relative;width:min(400px,100%);text-align:center;
+  background:var(--card-bg);border:2px solid var(--primary);border-radius:28px;
+  padding:28px 24px 20px;
+  box-shadow:0 20px 50px rgba(90,66,50,.3);
+  transform:translateY(24px) scale(.92);transition:transform .3s cubic-bezier(.3,1.5,.5,1);
+}
+.link-modal.open .lm-card{transform:none}
+.lm-dog{width:62px;margin:0 auto 10px;animation:hop 2.4s ease infinite}
+.lm-card h4{font-family:var(--title-font);font-size:1.3rem;color:var(--text-main);margin-bottom:6px}
+.lm-p{font-size:.88rem;color:var(--text-light);margin-bottom:16px}
+.lm-link{
+  font-size:.82rem;word-break:break-all;text-align:left;
+  background:#FFF3E2;border:1.5px dashed var(--primary);border-radius:14px;
+  padding:10px 14px;color:var(--secondary);margin-bottom:16px;
+  -webkit-user-select:all;user-select:all;
+}
+.lm-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.lm-copy{
+  display:inline-flex;align-items:center;gap:8px;
+  border:none;background:var(--primary);color:#fff;font-weight:700;font-family:inherit;
+  padding:11px 26px;border-radius:999px;font-size:.95rem;
+  box-shadow:0 4px 0 #A57C4E;transition:.2s;
+}
+.lm-copy svg{width:16px}
+.lm-copy:active{transform:translateY(2px);box-shadow:0 2px 0 #A57C4E}
+.lm-close{
+  border:2px solid var(--line);background:#fff;color:var(--text-light);font-family:inherit;
+  padding:10px 22px;border-radius:999px;font-size:.95rem;font-weight:500;
+}
+.lm-tip{font-size:.72rem;color:var(--text-light);margin-top:14px}
+
+/* ============ Toast ============ */
+#toastWrap{position:fixed;top:88px;left:50%;transform:translateX(-50%);z-index:200;display:flex;flex-direction:column;gap:10px;align-items:center}
+.toast{
+  display:flex;align-items:center;gap:10px;
+  background:var(--secondary);color:#FFF6E8;font-weight:500;font-size:.92rem;
+  padding:11px 22px;border-radius:999px;
+  box-shadow:0 10px 26px rgba(90,66,50,.3);
+  animation:toastin .45s cubic-bezier(.3,1.6,.5,1);
+}
+.toast svg{width:17px;color:var(--accent)}
+.toast.out{animation:toastout .4s forwards}
+@keyframes toastin{from{opacity:0;transform:translateY(-16px) scale(.9)}to{opacity:1;transform:none}}
+@keyframes toastout{to{opacity:0;transform:translateY(-12px) scale(.92)}}
+
+/* ============ 点击爪印冒泡 ============ */
+.paw-pop{
+  position:fixed;z-index:9999;pointer-events:none;width:30px;height:30px;color:var(--primary);
+  animation:pawpop .68s ease-out forwards;
+}
+.paw-pop svg{width:100%;height:100%}
+@keyframes pawpop{
+  0%{transform:translate(-50%,-50%) rotate(var(--r)) scale(.35);opacity:0}
+  30%{transform:translate(-50%,-50%) rotate(var(--r)) scale(1.12);opacity:.95}
+  100%{transform:translate(-50%,-50%) rotate(var(--r)) scale(1.35);opacity:0}
+}
+
+/* ============ 滚动进入动画 ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.on{opacity:1;transform:none}
+.cards .card:nth-child(2){transition-delay:.12s}
+.cards .card:nth-child(3){transition-delay:.24s}
+.today-grid .t-card:nth-child(2){transition-delay:.12s}
+.today-grid .t-card:nth-child(3){transition-delay:.24s}
+
+/* ============ 响应式 ============ */
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;text-align:center;padding-top:120px;gap:16px}
+  .hero .sub{margin-inline:auto}
+  .hero-cta{justify-content:center}
+  .hero-fig{order:-1}
+  .hero-dog{width:min(270px,64vw)}
+  .cards{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .today-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto}
+  .about-traits{grid-template-columns:1fr}
+}
+@media (max-width:680px){
+  .nav-links a:not(.nav-cta){display:none}
+  .nav-links a.nav-cta{margin-left:0}
+  .hero h1{font-size:2rem}
+  .about-box{padding:26px 20px}
+}
+/* 尊重减少动态偏好 */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SVG 符号库 ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- 爪印 -->
+    <symbol id="sym-paw" viewBox="0 0 24 24">
+      <g fill="currentColor">
+        <ellipse cx="12" cy="15.8" rx="5.4" ry="4.4"/>
+        <ellipse cx="5.6" cy="10" rx="2.5" ry="3.1" transform="rotate(-18 5.6 10)"/>
+        <ellipse cx="9.9" cy="6.6" rx="2.5" ry="3.1"/>
+        <ellipse cx="14.1" cy="6.6" rx="2.5" ry="3.1"/>
+        <ellipse cx="18.4" cy="10" rx="2.5" ry="3.1" transform="rotate(18 18.4 10)"/>
+      </g>
+    </symbol>
+    <!-- 骨头 -->
+    <symbol id="sym-bone" viewBox="0 0 64 32">
+      <g fill="currentColor">
+        <circle cx="12" cy="10" r="8"/><circle cx="12" cy="22" r="8"/>
+        <circle cx="52" cy="10" r="8"/><circle cx="52" cy="22" r="8"/>
+        <rect x="9" y="9" width="46" height="14" rx="7"/>
+      </g>
+    </symbol>
+    <!-- 日历 -->
+    <symbol id="sym-cal" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="8" y="11" width="32" height="29" rx="6"/>
+        <path d="M8 20h32"/>
+        <path d="M17 7v7M31 7v7"/>
+      </g>
+      <g fill="currentColor">
+        <circle cx="17" cy="28" r="2.4"/><circle cx="24" cy="28" r="2.4"/><circle cx="31" cy="28" r="2.4"/>
+        <circle cx="17" cy="34.5" r="2.4"/><circle cx="24" cy="34.5" r="2.4"/>
+      </g>
+    </symbol>
+    <!-- 地铁 -->
+    <symbol id="sym-metro" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="10" y="7" width="28" height="27" rx="8"/>
+        <rect x="16" y="13" width="16" height="10" rx="3.5"/>
+        <path d="M14 40l-3-6M34 40l3-6"/>
+      </g>
+      <g fill="currentColor">
+        <circle cx="18" cy="27.5" r="2.2"/><circle cx="30" cy="27.5" r="2.2"/>
+      </g>
+    </symbol>
+    <!-- 旅行箱 -->
+    <symbol id="sym-travel" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="10" y="15" width="28" height="25" rx="6"/>
+        <path d="M20 15v-4h8v4"/>
+        <path d="M18 40v3M30 40v3"/>
+      </g>
+      <g fill="currentColor">
+        <circle cx="19" cy="24" r="2.2"/><circle cx="29" cy="24" r="2.2"/><circle cx="24" cy="32" r="2.2"/>
+      </g>
+    </symbol>
+    <!-- 时钟 -->
+    <symbol id="sym-clock" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round">
+        <circle cx="24" cy="24" r="17"/>
+        <path d="M24 14v10l7 5"/>
+      </g>
+    </symbol>
+    <!-- 探头吉娃娃（卡片 hover 用） -->
+    <symbol id="sym-peek" viewBox="0 0 120 100">
+      <path d="M32 62 C 25 40 23 24 25 11 C 42 22 52 37 58 54 Z" fill="#C69C6D"/>
+      <path d="M88 62 C 95 40 97 24 95 11 C 78 22 68 37 62 54 Z" fill="#C69C6D"/>
+      <circle cx="60" cy="62" r="38" fill="#EFD3A8"/>
+      <circle cx="47" cy="58" r="7" fill="#4A3B32"/>
+      <circle cx="73" cy="58" r="7" fill="#4A3B32"/>
+      <circle cx="49.4" cy="55.4" r="2.4" fill="#fff"/>
+      <circle cx="75.4" cy="55.4" r="2.4" fill="#fff"/>
+      <ellipse cx="60" cy="72" rx="5" ry="4" fill="#4A3B32"/>
+      <path d="M53 78 q7 7 14 0" fill="none" stroke="#4A3B32" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="34" cy="70" rx="6" ry="4" fill="#F5A88C" opacity=".5"/>
+      <ellipse cx="86" cy="70" rx="6" ry="4" fill="#F5A88C" opacity=".5"/>
+      <rect x="41" y="88" width="15" height="12" rx="6" fill="#EFD3A8"/>
+      <rect x="64" y="88" width="15" height="12" rx="6" fill="#EFD3A8"/>
+    </symbol>
+    <!-- 导航 logo 吉娃娃头像 -->
+    <symbol id="sym-chi-logo" viewBox="0 0 100 100">
+      <path d="M28 56 L15 13 L47 34 Z" fill="#C69C6D"/>
+      <path d="M72 56 L85 13 L53 34 Z" fill="#C69C6D"/>
+      <path d="M30 47 L22 22 L41 36 Z" fill="#F2B4A0"/>
+      <path d="M70 47 L78 22 L59 36 Z" fill="#F2B4A0"/>
+      <circle cx="50" cy="60" r="35" fill="#EFD3A8"/>
+      <circle cx="38" cy="56" r="7.5" fill="#4A3B32"/>
+      <circle cx="62" cy="56" r="7.5" fill="#4A3B32"/>
+      <circle cx="40.5" cy="53.2" r="2.6" fill="#fff"/>
+      <circle cx="64.5" cy="53.2" r="2.6" fill="#fff"/>
+      <ellipse cx="50" cy="71" rx="5" ry="4" fill="#4A3B32"/>
+      <path d="M43 77 q7 7 14 0" fill="none" stroke="#4A3B32" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="27" cy="69" rx="5.5" ry="3.6" fill="#F5A88C" opacity=".55"/>
+      <ellipse cx="73" cy="69" rx="5.5" ry="3.6" fill="#F5A88C" opacity=".55"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ Loading：吉娃娃追骨头 ============ -->
+<div id="loader" aria-hidden="true">
+  <div class="loader-scene">
+    <div class="loader-dog">
+      <svg viewBox="0 0 190 130" width="190">
+        <!-- 尾巴 -->
+        <path class="run-tail" d="M 34 66 Q 12 56 10 36" fill="none" stroke="#C69C6D" stroke-width="12" stroke-linecap="round"/>
+        <!-- 后腿 / 前腿（交替摆动） -->
+        <g fill="#EFD3A8">
+          <rect class="leg l1" x="52" y="82" width="13" height="34" rx="6.5"/>
+          <rect class="leg l2" x="74" y="82" width="13" height="34" rx="6.5"/>
+          <rect class="leg l3" x="96" y="82" width="13" height="34" rx="6.5"/>
+          <rect class="leg l4" x="118" y="82" width="13" height="34" rx="6.5"/>
+        </g>
+        <!-- 身体 + 头 -->
+        <g class="run-body">
+          <ellipse cx="86" cy="64" rx="52" ry="30" fill="#EFD3A8"/>
+          <ellipse cx="86" cy="72" rx="26" ry="20" fill="#FFF6E8"/>
+          <!-- 项圈 -->
+          <path d="M 128 52 q 8 10 2 20" fill="none" stroke="#E85D4A" stroke-width="9" stroke-linecap="round"/>
+          <!-- 头 -->
+          <circle cx="146" cy="42" r="27" fill="#EFD3A8"/>
+          <!-- 大耳朵 -->
+          <path d="M 138 22 C 133 8 134 -2 137 -8 C 147 -2 152 8 152 20 Z" fill="#C69C6D"/>
+          <!-- 眼睛（大眼睛是吉娃娃的灵魂） -->
+          <circle cx="154" cy="38" r="5.5" fill="#4A3B32"/>
+          <circle cx="155.8" cy="36" r="1.9" fill="#fff"/>
+          <!-- 鼻子与嘴 -->
+          <circle cx="171" cy="44" r="4" fill="#4A3B32"/>
+          <path d="M 168 50 q 4 4 8 0" fill="none" stroke="#4A3B32" stroke-width="2.6" stroke-linecap="round"/>
+          <!-- 跑步飘起来的舌头 -->
+          <path d="M 170 52 q 6 9 12 4 q -2 7 -7 6 q -5 -1 -5 -10 Z" fill="#F2938C"/>
+          <!-- 腮红 -->
+          <ellipse cx="140" cy="50" rx="4.5" ry="3" fill="#F5A88C" opacity=".6"/>
+        </g>
+      </svg>
+      <svg class="bone" viewBox="0 0 64 32"><use href="#sym-bone"/></svg>
+    </div>
+    <div class="loader-track">
+      <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+      <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+      <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+      <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+      <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+      <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+    </div>
+    <p class="loader-txt">汪！吉吉正在开门……</p>
+  </div>
+</div>
+
+<!-- ============ 导航 ============ -->
+<nav aria-label="主导航">
+  <a class="nav-brand" href="#top" id="logoBtn" title="点我一下试试">
+    <svg class="nav-logo" viewBox="0 0 100 100"><use href="#sym-chi-logo"/></svg>
+    <span class="nav-title">
+      <b>我的工作台</b>
+      <small>CHIHUAHUA DESK · 吉吉守卫中</small>
+    </span>
+  </a>
+  <div class="nav-links">
+    <a href="#workbench">工作台</a>
+    <a href="#today">今日速览</a>
+    <a href="#about">关于</a>
+    <a class="nav-cta" href="https://travel.wzyspace.online/" target="_blank" rel="noopener">去旅行 🧳</a>
+  </div>
+</nav>
+
+<!-- ============ Hero Banner ============ -->
+<header class="hero" id="top">
+  <div class="hero-copy">
+    <span class="badge"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg><span id="badgeDate">吉娃娃守卫中</span></span>
+    <h1><span class="hi" id="greet">晚上好</span>，主人！<br>欢迎回到你的工作台</h1>
+    <p class="sub">
+      这里由看门犬<b>「吉吉」</b>——一只<b>大眼睛、小身材、倔强又萌</b>的吉娃娃守卫。
+      大眼睛盯紧每个项目，小短腿跑遍每条地铁，日子被一本本手账安排得明明白白。汪！
+    </p>
+    <div class="hero-cta">
+      <a class="btn-main" href="#workbench">
+        <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+        进入工作台
+      </a>
+      <a class="btn-bone" href="https://travel.wzyspace.online/" target="_blank" rel="noopener" aria-label="打开喜袜袜旅行手账">
+        <svg class="bone-bg" viewBox="0 0 200 72" aria-hidden="true">
+          <g fill="currentColor">
+            <circle cx="34" cy="24" r="17"/><circle cx="34" cy="48" r="17"/>
+            <circle cx="166" cy="24" r="17"/><circle cx="166" cy="48" r="17"/>
+            <rect x="28" y="20" width="144" height="32" rx="16"/>
+          </g>
+        </svg>
+        <span>去旅行 →</span>
+      </a>
+    </div>
+    <p class="hero-hint">
+      <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+      微信小程序 / 嵌入式预览里无法直接新开外部页面，点链接会给出复制引导；用手机或电脑浏览器打开本页体验最佳。
+    </p>
+  </div>
+
+  <div class="hero-fig" aria-hidden="true">
+    <!-- 漂浮装饰：爪印与骨头 -->
+    <svg class="float-deco f1" viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+    <svg class="float-deco f2" viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+    <svg class="float-deco f3" viewBox="0 0 64 32"><use href="#sym-bone"/></svg>
+    <svg class="float-deco f4" viewBox="0 0 64 32"><use href="#sym-bone"/></svg>
+
+    <!-- 大吉娃娃插画 -->
+    <div class="hero-dog hero-dog-stage" role="img" aria-label="参考图中的黑棕配色、半眯眼吐舌头吉娃娃">
+      <img class="hero-dog-cutout" src="./吉娃娃工作台-原图小狗-像素版-v3.png" alt="" draggable="false">
+    </div>
+    <svg class="hero-dog-vector" style="display:none" viewBox="0 0 340 390" aria-hidden="true">
+      <defs>
+        <clipPath id="sleepyEyeL"><ellipse cx="112" cy="158" rx="37" ry="30"/></clipPath>
+        <clipPath id="sleepyEyeR"><ellipse cx="228" cy="158" rx="37" ry="30"/></clipPath>
+        <filter id="wawaShadow" x="-25%" y="-25%" width="150%" height="165%">
+          <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#3C2C24" flood-opacity=".18"/>
+        </filter>
+      </defs>
+
+      <ellipse cx="170" cy="372" rx="104" ry="11" fill="#8B5E3C" opacity=".12"/>
+
+      <!-- 保留原来好看的卷尾轮廓，换成黑棕吉娃娃毛色 -->
+      <g class="tail">
+        <path d="M 220 315 C 257 322 289 297 287 258 C 286 235 272 224 261 234 C 253 242 259 254 271 250" fill="none" stroke="#201B19" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 220 315 C 257 322 289 297 287 258 C 286 235 272 224 261 234 C 253 242 259 254 271 250" fill="none" stroke="#505052" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <g filter="url(#wawaShadow)">
+        <!-- 后腿与圆润的小身体 -->
+        <path d="M 126 291 C 104 287 94 305 98 330 C 101 352 115 365 134 359 C 151 354 154 319 142 301 C 138 295 133 292 126 291 Z" fill="#505052" stroke="#201B19" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M 214 291 C 236 287 246 305 242 330 C 239 352 225 365 206 359 C 189 354 186 319 198 301 C 202 295 207 292 214 291 Z" fill="#505052" stroke="#201B19" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M 170 216 C 140 216 121 241 118 280 L 113 329 C 111 348 127 361 149 361 H 191 C 213 361 229 348 227 329 L 222 280 C 219 241 200 216 170 216 Z" fill="#505052" stroke="#201B19" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M 159 326 C 164 320 176 320 181 326 L 184 359 H 156 Z" fill="#C78738"/>
+        <path d="M 151 286 C 147 313 147 340 151 359 M 189 286 C 193 313 193 340 189 359" fill="none" stroke="#201B19" stroke-width="6" stroke-linecap="round"/>
+        <path d="M 119 355 q 13 7 27 1 M 194 356 q 14 6 27 -1" fill="none" stroke="#201B19" stroke-width="6" stroke-linecap="round"/>
+
+        <!-- 参考图里醒目的蓝色项圈 -->
+        <path d="M 126 218 Q 170 249 214 217" fill="none" stroke="#201B19" stroke-width="18" stroke-linecap="round"/>
+        <path d="M 127 218 Q 170 245 213 217" fill="none" stroke="#22C7F2" stroke-width="10" stroke-linecap="round"/>
+      </g>
+
+      <!-- 大耳朵、苹果头和半眯眼神态 -->
+      <g class="head" filter="url(#wawaShadow)">
+        <g class="ear ear-l">
+          <path d="M 132 112 C 101 102 50 69 48 31 C 47 15 60 7 76 14 C 116 30 146 55 158 83 Z" fill="#505052" stroke="#201B19" stroke-width="7" stroke-linejoin="round"/>
+          <path d="M 114 91 C 88 74 62 47 63 28 C 90 37 127 60 145 82 Z" fill="#C78738"/>
+        </g>
+        <g class="ear ear-r">
+          <path d="M 208 112 C 239 102 290 69 292 31 C 293 15 280 7 264 14 C 224 30 194 55 182 83 Z" fill="#505052" stroke="#201B19" stroke-width="7" stroke-linejoin="round"/>
+          <path d="M 226 91 C 252 74 278 47 277 28 C 250 37 213 60 195 82 Z" fill="#C78738"/>
+        </g>
+
+        <path d="M 170 65 C 100 63 56 89 55 145 C 54 199 99 229 170 236 C 241 229 286 199 285 145 C 284 89 240 63 170 65 Z" fill="#505052" stroke="#201B19" stroke-width="7" stroke-linejoin="round"/>
+
+        <!-- 黑棕吉娃娃的眉上棕色斑 -->
+        <path d="M 91 118 C 101 108 119 108 130 115 C 129 127 119 134 107 131 C 99 129 93 124 91 118 Z" fill="#C78738"/>
+        <path d="M 210 115 C 221 108 239 108 249 118 C 247 124 241 129 233 131 C 221 134 211 127 210 115 Z" fill="#C78738"/>
+
+        <!-- 白色眼球先画，灰色眼皮覆盖上半部 -->
+        <g class="eyes">
+          <ellipse cx="112" cy="158" rx="37" ry="30" fill="#FFFFFF" stroke="#201B19" stroke-width="7"/>
+          <ellipse cx="228" cy="158" rx="37" ry="30" fill="#FFFFFF" stroke="#201B19" stroke-width="7"/>
+          <circle cx="119" cy="164" r="8" fill="#201B19"/>
+          <circle cx="221" cy="164" r="8" fill="#201B19"/>
+          <g class="eyelids">
+            <path d="M 67 117 H 158 V 158 C 137 146 94 146 67 162 Z" fill="#505052" clip-path="url(#sleepyEyeL)"/>
+            <path d="M 182 117 H 273 V 162 C 246 146 203 146 182 158 Z" fill="#505052" clip-path="url(#sleepyEyeR)"/>
+            <path d="M 76 158 C 96 145 137 145 149 160" fill="none" stroke="#201B19" stroke-width="6" stroke-linecap="round"/>
+            <path d="M 191 160 C 203 145 244 145 264 158" fill="none" stroke="#201B19" stroke-width="6" stroke-linecap="round"/>
+          </g>
+          <ellipse cx="112" cy="158" rx="37" ry="30" fill="none" stroke="#201B19" stroke-width="7"/>
+          <ellipse cx="228" cy="158" rx="37" ry="30" fill="none" stroke="#201B19" stroke-width="7"/>
+        </g>
+
+        <!-- 宽棕色口鼻、歪吐的小舌头 -->
+        <path d="M 103 171 C 120 157 147 160 170 168 C 193 160 220 157 237 171 C 257 188 241 215 214 225 C 190 234 150 234 126 225 C 99 215 83 188 103 171 Z" fill="#C78738" stroke="#201B19" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M 158 173 C 164 168 176 168 182 173 C 183 181 178 188 170 190 C 162 188 157 181 158 173 Z" fill="#3A2530" stroke="#201B19" stroke-width="5" stroke-linejoin="round"/>
+
+        <g class="tongue">
+          <path d="M 153 192 C 147 199 144 211 146 220 C 148 232 160 236 168 227 C 174 220 175 205 170 197 C 164 201 158 199 153 192 Z" fill="#F0643D" stroke="#201B19" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M 159 211 q 5 4 10 0" fill="none" stroke="#D84930" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+        <path d="M 170 188 C 168 201 158 208 145 204 M 171 190 C 175 204 188 209 201 203" fill="none" stroke="#201B19" stroke-width="5" stroke-linecap="round"/>
+        <ellipse cx="164" cy="174" rx="4" ry="2.5" fill="#6B4A4D" opacity=".72"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<!-- ============ 骨头波浪分隔线 ============ -->
+<div class="divider" aria-hidden="true">
+  <svg class="d-paw" viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+  <svg class="d-wave" viewBox="0 0 600 24" preserveAspectRatio="none">
+    <path d="M0 12 Q 25 0 50 12 T 100 12 T 150 12 T 200 12 T 250 12 T 300 12 T 350 12 T 400 12 T 450 12 T 500 12 T 550 12 T 600 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <svg class="d-bone" viewBox="0 0 64 32"><use href="#sym-bone"/></svg>
+  <svg class="d-wave" viewBox="0 0 600 24" preserveAspectRatio="none">
+    <path d="M0 12 Q 25 0 50 12 T 100 12 T 150 12 T 200 12 T 250 12 T 300 12 T 350 12 T 400 12 T 450 12 T 500 12 T 550 12 T 600 12" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <svg class="d-paw" viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+</div>
+
+<main>
+  <!-- ============ 工作台入口 ============ -->
+  <section id="workbench">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>WORKBENCH · 三个常用入口</span>
+      <h2>吉吉叼来的三个工作台</h2>
+      <p>都是主人每天要用的地方，点开就出发，吉吉帮你看着门。</p>
+    </div>
+
+    <div class="cards">
+      <!-- 2026 日历 -->
+      <a class="card reveal" style="--c:#FFB347;--c-l:#FFC875" href="https://www.wzyspace.online/2026-calendar/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><use href="#sym-cal"/></svg></div>
+          <span class="card-tag">假期规划</span>
+        </div>
+        <h3>2026 年度日历<small>2026 CALENDAR</small></h3>
+        <p class="card-desc">休息安排一屏看清：周末加班攒假、调休记录、月末出游全在这里汇总。</p>
+        <ul class="card-points">
+          <li><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>加班攒假台账 · 假期消耗共 5.5 天</li>
+          <li><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>8.29 – 8.30 月末出游，徐州走起</li>
+        </ul>
+        <span class="card-go">查看入口 <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg></span>
+        <svg class="card-peek" viewBox="0 0 120 100"><use href="#sym-peek"/></svg>
+      </a>
+
+      <!-- 津邻图谱 -->
+      <a class="card reveal" style="--c:#C69C6D;--c-l:#D8B285" href="https://www.wzyspace.online/tianjin-metro-community-manager/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><use href="#sym-metro"/></svg></div>
+          <span class="card-tag">津邻图谱</span>
+        </div>
+        <h3>地铁沿线小区管理<small>TIANJIN METRO · 1-10 号线</small></h3>
+        <p class="card-desc">线路 → 站点 → 小区逐级浏览，天津地铁沿线的找房记录一屏管理。</p>
+        <ul class="card-points">
+          <li><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>10 条线路 · 248 个站点数据</li>
+          <li><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>展开节点逐级浏览，筛选按钮快速定位</li>
+        </ul>
+        <span class="card-go">查看入口 <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg></span>
+        <svg class="card-peek" viewBox="0 0 120 100"><use href="#sym-peek"/></svg>
+      </a>
+
+      <!-- 旅行手账 -->
+      <a class="card reveal" style="--c:#E85D4A;--c-l:#F07D6D" href="https://travel.wzyspace.online/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><use href="#sym-travel"/></svg></div>
+          <span class="card-tag">旅行手账</span>
+        </div>
+        <h3>喜袜袜旅行手账<small>TRAVEL JOURNAL · 持续更新</small></h3>
+        <p class="card-desc">从天津出发的小旅行合集：大交通 → 行程 → 美食 → 避坑，一条条手工整理的省钱路线。</p>
+        <ul class="card-points">
+          <li><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>唐山 · 景德镇 · 徐州 三地攻略已收录</li>
+          <li><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>卧铺 ¥304 走京九线，瓷都三日漫游</li>
+        </ul>
+        <span class="card-go">查看入口 <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg></span>
+        <svg class="card-peek" viewBox="0 0 120 100"><use href="#sym-peek"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ 今日速览 ============ -->
+  <section id="today" style="margin-top:64px">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>TODAY · 今日速览</span>
+      <h2>吉吉的小黑板</h2>
+    </div>
+    <div class="today-grid">
+      <div class="t-card reveal">
+        <div class="t-label"><svg viewBox="0 0 48 48"><use href="#sym-clock"/></svg>现在几点汪</div>
+        <div class="t-clock"><span id="clock">--:--</span><small id="clockSec"></small></div>
+        <div class="t-date" id="dateFull">正在对时……</div>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-label"><svg viewBox="0 0 48 48"><use href="#sym-travel"/></svg>徐州之行倒计时</div>
+        <div class="t-count" id="countNum">…</div>
+        <div class="trip-progress"><i id="tripBar"></i></div>
+        <p class="t-note" id="countNote">8.29 – 8.30 · 徐州博物馆 · 高铁直达</p>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-label"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>吉娃娃语录</div>
+        <p class="t-quote" id="quote">……</p>
+        <button class="btn-woof" id="woofBtn" type="button">
+          <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+          再汪一句
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 关于 ============ -->
+  <section id="about" style="margin-top:64px">
+    <div class="sec-head reveal">
+      <span class="sec-kicker"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>ABOUT · 关于这里</span>
+      <h2>为什么是吉娃娃？</h2>
+    </div>
+    <div class="about-box reveal">
+      <p>
+        这是我的<b>个人工作台</b>，把日常最常用的三个入口收拢在一页。
+        设计语言来自吉娃娃这种小家伙——<b>大眼睛、小身材、倔强又萌</b>：
+        暖棕色是它的毛，项圈红是它的小脾气，爪印和骨头代替所有圆点与直线。
+      </p>
+      <div class="about-traits">
+        <div class="trait">
+          <b><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>大眼睛</b>
+          <p>看得清：日历、地铁数据、旅行路线，一屏盯住所有入口，不放过任何细节。</p>
+        </div>
+        <div class="trait">
+          <b><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>小身材</b>
+          <p>跑得勤：单文件、零依赖、打开即用，小短腿也能天天巡逻。</p>
+        </div>
+        <div class="trait">
+          <b><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>倔强又萌</b>
+          <p>磨得细：每个按钮都要会卖萌，每次交互都留一点小惊喜。</p>
+        </div>
+      </div>
+      <div class="about-links">
+        <a href="https://www.wzyspace.online/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>wzyspace.online 主站</a>
+        <a href="https://travel.wzyspace.online/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>travel 旅行手账</a>
+        <a href="https://www.wzyspace.online/2026-calendar/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>2026 日历</a>
+        <a href="https://www.wzyspace.online/tianjin-metro-community-manager/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>津邻图谱</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ 页脚 ============ -->
+<footer>
+  <div class="paw-walk" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+    <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+    <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+    <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+    <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+    <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+  </div>
+  <div>© 2026 · wzyspace.online · 吉娃娃风格个人工作台</div>
+  <div class="dog-credit">看门犬：吉吉（吉娃娃）🐾 手账官：喜袜袜（柴犬）🐕</div>
+</footer>
+
+<!-- ============ 回到顶部 ============ -->
+<button id="backTop" aria-label="回到顶部" type="button">
+  <svg viewBox="0 0 100 100"><use href="#sym-chi-logo"/></svg>
+  <span class="tip">回顶部 · 汪！</span>
+</button>
+
+<!-- 微信/小程序环境：复制链接引导弹层 -->
+<div class="link-modal" id="linkModal" role="dialog" aria-modal="true" aria-label="复制链接">
+  <div class="lm-mask" data-close></div>
+  <div class="lm-card">
+    <svg class="lm-dog" viewBox="0 0 100 100"><use href="#sym-chi-logo"/></svg>
+    <h4>汪！这里跳不出去~</h4>
+    <p class="lm-p">微信小程序的窗口不能直接打开外部网站。主人把链接复制出来，到浏览器里粘贴打开就行：</p>
+    <div class="lm-link" id="lmLink"></div>
+    <div class="lm-actions">
+      <button class="lm-copy" id="lmCopy" type="button">
+        <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>
+        <span id="lmCopyTxt">复制链接</span>
+      </button>
+      <button class="lm-close" data-close type="button">先不了</button>
+    </div>
+    <p class="lm-tip">粘到 Safari / Chrome 打开 · 电脑浏览器打开工作台体验最佳</p>
+  </div>
+</div>
+
+<!-- Toast 容器 -->
+<div id="toastWrap" aria-live="polite"></div>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var pad = function(n){ return n < 10 ? '0' + n : '' + n; };
+
+  /* ---------- Loading 收尾（等 load 或兜底 2.2s） ---------- */
+  var loader = $('loader'), loaderDone = false;
+  function finishLoader(){
+    if(loaderDone) return;
+    loaderDone = true;
+    loader.classList.add('hide');
+    setTimeout(function(){ if(loader.parentNode) loader.parentNode.removeChild(loader); }, 700);
+  }
+  window.addEventListener('load', function(){ setTimeout(finishLoader, 450); });
+  setTimeout(finishLoader, 2200);
+
+  /* ---------- 问候语 + 日期 ---------- */
+  var now = new Date();
+  var h = now.getHours();
+  var greet = h < 5 ? '夜深了' : h < 9 ? '早上好' : h < 12 ? '上午好' : h < 14 ? '中午好' : h < 18 ? '下午好' : h < 23 ? '晚上好' : '夜深了';
+  $('greet').textContent = greet;
+  var weeks = ['日','一','二','三','四','五','六'];
+  $('badgeDate').textContent = now.getMonth() + 1 + ' 月 ' + now.getDate() + ' 日 · 吉娃娃守卫中';
+
+  /* ---------- 实时时钟 ---------- */
+  var clockEl = $('clock'), clockSec = $('clockSec');
+  function tick(){
+    var n = new Date();
+    clockEl.textContent = pad(n.getHours()) + ':' + pad(n.getMinutes());
+    clockSec.textContent = ' : ' + pad(n.getSeconds());
+    $('dateFull').textContent = n.getFullYear() + ' 年 ' + (n.getMonth() + 1) + ' 月 ' + n.getDate() + ' 日 · 星期' + weeks[n.getDay()];
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ---------- 徐州之行倒计时（8.29 - 8.30） ---------- */
+  var tripStart = new Date('2026-08-29T00:00:00+08:00');
+  var tripEnd   = new Date('2026-08-31T00:00:00+08:00');
+  var t = new Date();
+  var countNum = $('countNum'), countNote = $('countNote'), tripBar = $('tripBar');
+  if(t < tripStart){
+    var days = Math.ceil((tripStart - t) / 86400000);
+    countNum.innerHTML = days + ' <small>天</small>';
+    countNote.textContent = '8.29 – 8.30 徐州之行 · 徐州博物馆 · 高铁直达';
+    // 进度：从 8 月 1 日走到出发日的完成度
+    var monthStart = new Date('2026-08-01T00:00:00+08:00');
+    var p = Math.min(100, Math.max(0, (t - monthStart) / (tripStart - monthStart) * 100));
+    requestAnimationFrame(function(){ tripBar.style.width = p.toFixed(1) + '%'; });
+  } else if(t < tripEnd){
+    countNum.innerHTML = '出发！ <small>汪</small>';
+    countNote.textContent = '徐州之行进行中 · 玩得开心，替吉吉多看两眼文物 🏺';
+    tripBar.style.width = '100%';
+  } else {
+    countNum.innerHTML = '已归队 <small>汪</small>';
+    countNote.textContent = '下一站想去哪？告诉吉吉，爪印已就位 ✨';
+    tripBar.style.width = '100%';
+  }
+
+  /* ---------- 吉娃娃语录 ---------- */
+  var quotes = [
+    '汪！眼睛大是为了盯紧每一个抽赏页的细节。',
+    '个子小，步子勤——10 号线 39 个站，本汪也跑得完。',
+    '倔强不是脾气，是把交互磨到上线的那种坚持。',
+    '订阅消息 19 个模板，一个都不许漏，这是原则问题。',
+    '8 月 29 日陪主人去徐州看博物馆，行李我来叼。',
+    '代码会写完的，骨头也会有的。',
+    '半弹窗选包交互本汪盯第三轮了，主人放心。',
+    '今天也要像吉娃娃一样：眼睛睁大，小事认真。'
+  ];
+  var qi = Math.floor(Math.random() * quotes.length);
+  var quoteEl = $('quote');
+  quoteEl.textContent = quotes[qi];
+  $('woofBtn').addEventListener('click', function(){
+    qi = (qi + 1) % quotes.length;
+    quoteEl.classList.remove('flip');
+    void quoteEl.offsetWidth; /* 重置动画 */
+    quoteEl.textContent = quotes[qi];
+    quoteEl.classList.add('flip');
+  });
+
+  /* ---------- 滚动进入动画 ---------- */
+  var io = ('IntersectionObserver' in window)
+    ? new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+        });
+      }, { threshold: .15 })
+    : null;
+  document.querySelectorAll('.reveal').forEach(function(el){
+    if(io) io.observe(el); else el.classList.add('on');
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var backTop = $('backTop');
+  window.addEventListener('scroll', function(){
+    backTop.classList.toggle('show', window.scrollY > 380);
+  }, { passive: true });
+  backTop.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- Toast ---------- */
+  var toastWrap = $('toastWrap');
+  function toast(msg){
+    var t = document.createElement('div');
+    t.className = 'toast';
+    t.innerHTML = '<svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg><span></span>';
+    t.querySelector('span').textContent = msg;
+    toastWrap.appendChild(t);
+    setTimeout(function(){ t.classList.add('out'); }, 2300);
+    setTimeout(function(){ if(t.parentNode) t.parentNode.removeChild(t); }, 2800);
+  }
+
+  /* ---------- Logo 彩蛋 ---------- */
+  $('logoBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    toast('汪！吉吉一直守在工作台门口哦 🐾');
+  });
+
+  /* ---------- 外链跳转加固 ----------
+     按环境分级处理：
+     · 微信/小程序 webview：弹新窗口和外部跳转都会被微信安全策略拦截
+       （外部域名还需在小程序后台配置"业务域名"白名单），
+       → 直接弹出"复制链接"引导弹窗，到 Safari/Chrome 粘贴打开
+     · 普通浏览器：尝试新窗口打开
+     · 嵌入式预览沙箱：新窗口被拦 → 当前窗口打开 → 弹窗兜底 */
+  function isWeixinEnv(){
+    var ua = (navigator.userAgent || '').toLowerCase();
+    return window.__wxjs_environment === 'miniprogram'
+        || ua.indexOf('miniprogram') > -1
+        || ua.indexOf('micromessenger') > -1;
+  }
+  function legacyCopy(t){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = t;
+      ta.setAttribute('readonly','');
+      ta.style.position = 'fixed'; ta.style.top = '0'; ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select(); ta.setSelectionRange(0, t.length);
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }catch(e){}
+  }
+  function copyToClipboard(text){
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).catch(function(){ legacyCopy(text); });
+      }else{
+        legacyCopy(text);
+      }
+    }catch(err){ legacyCopy(text); }
+  }
+  /* 复制链接引导弹层 */
+  var linkModal = $('linkModal'), lmLink = $('lmLink'), lmCopyTxt = $('lmCopyTxt');
+  function openLinkModal(url){
+    lmLink.textContent = url;
+    lmCopyTxt.textContent = '复制链接';
+    linkModal.classList.add('open');
+  }
+  linkModal.addEventListener('click', function(e){
+    if(e.target.closest('[data-close]')) linkModal.classList.remove('open');
+  });
+  $('lmCopy').addEventListener('click', function(){
+    copyToClipboard(lmLink.textContent);
+    lmCopyTxt.textContent = '已复制 ✓ 去粘贴吧';
+    toast('链接已复制，到浏览器粘贴打开~');
+  });
+
+  document.querySelectorAll('a[target="_blank"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      /* 微信/小程序：一切跳转都会被拦，直接给复制引导 */
+      if(isWeixinEnv()){
+        openLinkModal(a.href);
+        return;
+      }
+      var w = null;
+      try{ w = window.open(a.href, '_blank'); }catch(err){}
+      if(w){ try{ w.opener = null; }catch(err2){} return; }
+      /* 新窗口被拦截：当前窗口打开 */
+      try{ window.location.href = a.href; return; }catch(err){}
+      /* 彻底失败：弹复制引导兜底 */
+      openLinkModal(a.href);
+    });
+  });
+
+  /* ---------- 点击处冒爪印 ---------- */
+  document.addEventListener('click', function(e){
+    var el = document.createElement('span');
+    el.className = 'paw-pop';
+    el.innerHTML = '<svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>';
+    el.style.left = e.clientX + 'px';
+    el.style.top = e.clientY + 'px';
+    el.style.setProperty('--r', (Math.random() * 56 - 28).toFixed(1) + 'deg');
+    document.body.appendChild(el);
+    setTimeout(function(){ if(el.parentNode) el.parentNode.removeChild(el); }, 720);
+  });
+})();
+</script>
+</body>
 </html>
