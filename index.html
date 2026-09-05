@@ -239,7 +239,7 @@ section{scroll-margin-top:96px}
 .sec-head p{color:var(--text-light);margin-top:8px;font-size:.95rem}
 
 /* ============ 工作台卡片 ============ */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
 .card{
   position:relative;display:flex;flex-direction:column;
   background:var(--card-bg);border:2px solid var(--line);border-radius:var(--radius);
@@ -463,6 +463,7 @@ footer .dog-credit{margin-top:6px;font-size:.8rem}
 .reveal.on{opacity:1;transform:none}
 .cards .card:nth-child(2){transition-delay:.12s}
 .cards .card:nth-child(3){transition-delay:.24s}
+.cards .card:nth-child(4){transition-delay:.36s}
 .today-grid .t-card:nth-child(2){transition-delay:.12s}
 .today-grid .t-card:nth-child(3){transition-delay:.24s}
 
@@ -545,6 +546,17 @@ footer .dog-credit{margin-top:6px;font-size:.8rem}
       </g>
       <g fill="currentColor">
         <circle cx="19" cy="24" r="2.2"/><circle cx="29" cy="24" r="2.2"/><circle cx="24" cy="32" r="2.2"/>
+      </g>
+    </symbol>
+    <!-- 前端词典 -->
+    <symbol id="sym-code" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="6" y="8" width="36" height="32" rx="6"/>
+        <path d="M6 17h36M18 25l-5 5 5 5M30 25l5 5-5 5"/>
+        <path d="M27 23l-6 14"/>
+      </g>
+      <g fill="currentColor">
+        <circle cx="12" cy="12.5" r="1.5"/><circle cx="17" cy="12.5" r="1.5"/><circle cx="22" cy="12.5" r="1.5"/>
       </g>
     </symbol>
     <!-- 时钟 -->
@@ -794,8 +806,8 @@ footer .dog-credit{margin-top:6px;font-size:.8rem}
   <!-- ============ 工作台入口 ============ -->
   <section id="workbench">
     <div class="sec-head reveal">
-      <span class="sec-kicker"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>WORKBENCH · 三个常用入口</span>
-      <h2>吉吉叼来的三个工作台</h2>
+      <span class="sec-kicker"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>WORKBENCH · 四个常用入口</span>
+      <h2>吉吉叼来的四个工作台</h2>
       <p>都是主人每天要用的地方，点开就出发，吉吉帮你看着门。</p>
     </div>
 
@@ -847,6 +859,22 @@ footer .dog-credit{margin-top:6px;font-size:.8rem}
         <span class="card-go">查看入口 <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg></span>
         <svg class="card-peek" viewBox="0 0 120 100"><use href="#sym-peek"/></svg>
       </a>
+
+      <!-- Vibecoding 前端交互术语词典 -->
+      <a class="card reveal" style="--c:#EA580C;--c-l:#F59E0B" href="https://www.wzyspace.online/vibecoding-frontend-dictionary/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><use href="#sym-code"/></svg></div>
+          <span class="card-tag">前端词典</span>
+        </div>
+        <h3>Vibecoding 前端交互术语词典<small>FRONTEND INTERACTION DICTIONARY</small></h3>
+        <p class="card-desc">把产品和设计需求翻译成可实现的前端交互语言，搜索、筛选、示例一页速查。</p>
+        <ul class="card-points">
+          <li><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>常用组件、状态、动效与布局术语集中整理</li>
+          <li><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>关键词搜索 · 分类筛选 · 点击复制</li>
+        </ul>
+        <span class="card-go">查看入口 <svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg></span>
+        <svg class="card-peek" viewBox="0 0 120 100"><use href="#sym-peek"/></svg>
+      </a>
     </div>
   </section>
 
@@ -887,14 +915,14 @@ footer .dog-credit{margin-top:6px;font-size:.8rem}
     </div>
     <div class="about-box reveal">
       <p>
-        这是我的<b>个人工作台</b>，把日常最常用的三个入口收拢在一页。
+        这是我的<b>个人工作台</b>，把日常最常用的四个入口收拢在一页。
         设计语言来自吉娃娃这种小家伙——<b>大眼睛、小身材、倔强又萌</b>：
         暖棕色是它的毛，项圈红是它的小脾气，爪印和骨头代替所有圆点与直线。
       </p>
       <div class="about-traits">
         <div class="trait">
           <b><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>大眼睛</b>
-          <p>看得清：日历、地铁数据、旅行路线，一屏盯住所有入口，不放过任何细节。</p>
+          <p>看得清：日历、地铁数据、旅行路线和前端词典，一屏盯住所有入口，不放过任何细节。</p>
         </div>
         <div class="trait">
           <b><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>小身材</b>
@@ -910,6 +938,7 @@ footer .dog-credit{margin-top:6px;font-size:.8rem}
         <a href="https://travel.wzyspace.online/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>travel 旅行手账</a>
         <a href="https://www.wzyspace.online/2026-calendar/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>2026 日历</a>
         <a href="https://www.wzyspace.online/tianjin-metro-community-manager/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>津邻图谱</a>
+        <a href="https://www.wzyspace.online/vibecoding-frontend-dictionary/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><use href="#sym-paw"/></svg>Vibecoding 前端词典</a>
       </div>
     </div>
   </section>

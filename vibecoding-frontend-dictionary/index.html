@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html data-page-node-id="H8f1JTGpSqgzDcSowfwVHu" lang="zh-CN">
+<head data-page-node-id="QSQUku5kAQjKlnvp6RRFxd">
+<meta data-page-node-id="JTh03cYDrJoMrw7XaY2wmo" charset="UTF-8">
+<meta data-page-node-id="1Hkx2pSF8pQOB7RPycAyD0" content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport">
+<title data-page-node-id="nBGjjx38wmAqONCkGf3YmX" data-pnid-children="0xS8EVNatNjw14pXA622jx">🪄 Vibecoding 前端交互术语词典</title>
+<style data-page-node-id="s4a2n5gwj7sTvFGdGvRNm6" data-pnid-children="77cK64mAbvWrarzOdGlicq">
+  :root{
+    --bg:#FAFAF7; --card:#FFFFFF;
+    --ink:#1C1917; --ink2:#57534E; --ink3:#78716C;
+    --accent:#EA580C; --accent-deep:#C2410C; --accent-soft:#FFF7ED; --accent-border:#FED7AA;
+    --border:#E7E5E4; --code-bg:#1C1917; --code-ink:#FDBA74; --code-dim:#A8A29E;
+    --radius:14px; --shadow:0 1px 2px rgba(28,25,23,.05),0 4px 16px rgba(28,25,23,.06);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.6;
+  }
+  .mono{font-family:ui-monospace,"SF Mono","Cascadia Code",Consolas,"Courier New",monospace}
+
+  /* ===== Header ===== */
+  .hero{max-width:1180px;margin:0 auto;padding:44px 20px 0}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--accent-deep);
+    background:var(--accent-soft);border:1px solid var(--accent-border);
+    padding:5px 12px;border-radius:999px;margin-bottom:14px;
+  }
+  h1{font-size:clamp(26px,4.5vw,38px);font-weight:800;letter-spacing:-.02em}
+  h1 .grad{background:linear-gradient(92deg,#EA580C,#B45309);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .subtitle{margin-top:8px;color:var(--ink2);font-size:15px;max-width:640px}
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .stat{
+    font-size:12.5px;color:var(--ink2);background:var(--card);
+    border:1px solid var(--border);border-radius:999px;padding:4px 12px;
+  }
+  .stat b{color:var(--accent-deep)}
+
+  /* ===== Search & Chips (sticky) ===== */
+  .ctrl{
+    position:sticky;top:0;z-index:50;
+    background:linear-gradient(var(--bg) 78%,rgba(250,250,247,0));
+    padding:18px 0 14px;margin-top:22px;
+  }
+  .ctrl-inner{max-width:1180px;margin:0 auto;padding:0 20px}
+  .searchbox{
+    display:flex;align-items:center;gap:10px;background:var(--card);
+    border:1.5px solid var(--border);border-radius:14px;padding:11px 16px;
+    box-shadow:var(--shadow);transition:border-color .15s;
+  }
+  .searchbox:focus-within{border-color:var(--accent)}
+  .searchbox svg{flex:none;opacity:.45}
+  .searchbox input{
+    flex:1;min-width:0;border:none;outline:none;background:transparent;font-size:15px;color:var(--ink);font-family:inherit;
+  }
+  .searchbox input::placeholder{color:var(--ink3)}
+  .searchbox kbd{
+    flex:none;font-family:inherit;font-size:11px;color:var(--ink3);
+    border:1px solid var(--border);border-radius:6px;padding:1px 7px;background:var(--bg);
+  }
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:12px 0 4px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{
+    flex:none;font-size:13px;font-weight:500;color:var(--ink2);
+    background:var(--card);border:1px solid var(--border);
+    border-radius:999px;padding:6px 14px;cursor:pointer;transition:all .15s;user-select:none;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--accent-deep)}
+  .chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .chip .n{opacity:.55;font-size:11.5px;margin-left:3px}
+
+  /* ===== Main ===== */
+  main{max-width:1180px;margin:0 auto;padding:8px 20px 60px}
+  .result-line{font-size:13px;color:var(--ink3);margin:6px 2px 14px;min-height:20px}
+  .result-line b{color:var(--accent-deep)}
+
+  /* ===== Five-element banner ===== */
+  .formula{
+    background:var(--code-bg);border-radius:18px;padding:26px 26px 22px;color:#E7E5E4;
+    margin-bottom:14px;box-shadow:var(--shadow);
+  }
+  .formula h2{font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
+  .formula .sub{font-size:12.5px;color:var(--code-dim);margin-bottom:16px}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:stretch}
+  .node{
+    flex:1;min-width:130px;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;
+  }
+  .node .no{font-size:11px;color:var(--code-ink);font-weight:700;letter-spacing:.05em}
+  .node .nm{font-size:14px;font-weight:700;color:#fff;margin:2px 0}
+  .node .ds{font-size:11.5px;color:#A8A29E;line-height:1.45}
+  .arrow{align-self:center;color:#57534E;font-size:15px;flex:none}
+  .formula .example{
+    margin-top:16px;padding:13px 15px;background:rgba(234,88,12,.10);
+    border:1px solid rgba(234,88,12,.35);border-radius:12px;
+    font-size:13px;color:#FDBA74;line-height:1.75;
+    overflow-wrap:anywhere;
+  }
+  .formula .example b{color:#fff}
+
+  /* ===== Section title ===== */
+  .sec-head{display:flex;align-items:baseline;gap:10px;margin:34px 2px 14px}
+  .sec-head h2{font-size:19px;font-weight:800;letter-spacing:-.01em}
+  .sec-head .en{font-size:12px;color:var(--ink3)}
+  .sec-head .cnt{margin-left:auto;font-size:12px;color:var(--ink3)}
+
+  /* ===== Quick cards ===== */
+  .quick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:10px}
+  .qcard{
+    display:flex;flex-direction:column;gap:6px;background:var(--card);
+    border:1px solid var(--border);border-radius:12px;padding:13px 15px;cursor:pointer;
+    width:100%;text-align:left;font:inherit;color:inherit;appearance:none;
+    transition:all .15s;box-shadow:var(--shadow);
+  }
+  .qcard:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .qcard:focus-visible{outline:3px solid var(--accent-border);outline-offset:2px;border-color:var(--accent)}
+  .qcard .say{font-size:13.5px;color:var(--ink2)}
+  .qcard .say::before{content:"💬 ";font-size:12px}
+  .qcard .to{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .qcard .to .arr{color:var(--accent);font-weight:700}
+  .qcard .term{
+    font-size:13px;font-weight:700;color:var(--accent-deep);
+    background:var(--accent-soft);border:1px solid var(--accent-border);
+    padding:2px 10px;border-radius:999px;
+  }
+  .qcard .cp{margin-left:auto;font-size:11px;color:var(--ink3)}
+  .qcard:hover .cp{color:var(--accent-deep)}
+  .qcard .cp.ok{color:#166534}
+
+  /* ===== Term cards ===== */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,345px),1fr));gap:14px}
+  .card{
+    background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+    padding:18px 18px 16px;display:flex;flex-direction:column;gap:9px;
+    box-shadow:var(--shadow);animation:up .35s ease-out both;
+  }
+  @keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .card-head{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .card-head h3{font-size:16.5px;font-weight:750;letter-spacing:-.01em}
+  .card-head .en{
+    font-size:11.5px;color:var(--ink2);background:var(--bg);
+    border:1px solid var(--border);border-radius:6px;padding:1px 8px;
+  }
+  .def{font-size:13.5px;color:var(--ink2)}
+  .say{
+    font-size:13px;color:var(--ink2);background:var(--bg);
+    border-left:3px solid var(--accent-border);border-radius:0 8px 8px 0;
+    padding:7px 11px;
+  }
+  .say::before{content:"说人话 · ";font-size:11px;font-weight:700;color:var(--accent-deep);letter-spacing:.05em}
+  .tip{margin-top:auto;background:var(--code-bg);border-radius:10px;overflow:hidden}
+  .tip-bar{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:7px 11px 0;
+  }
+  .tip-bar span{font-size:11px;font-weight:700;color:var(--code-ink);letter-spacing:.05em}
+  .copy-btn{
+    font-size:11px;color:#A8A29E;background:rgba(255,255,255,.08);
+    border:none;border-radius:6px;padding:3px 10px;cursor:pointer;font-family:inherit;
+    transition:all .15s;
+  }
+  .copy-btn:hover{color:#fff;background:rgba(255,255,255,.16)}
+  .copy-btn.ok{color:#4ADE80}
+  .tip-text{
+    font-size:12.5px;color:#E7E5E4;padding:5px 12px 11px;line-height:1.7;
+    font-family:ui-monospace,"SF Mono",Consolas,monospace;
+    overflow-wrap:anywhere;
+  }
+  .tip-text::before{content:"🪄 ";font-size:12px}
+
+  /* ===== Empty & footer ===== */
+  .empty{
+    text-align:center;padding:70px 20px;color:var(--ink3);font-size:14px;
+  }
+  .empty .big{font-size:40px;margin-bottom:10px}
+  footer{
+    border-top:1px solid var(--border);margin-top:30px;
+    padding:26px 20px 40px;text-align:center;font-size:12.5px;color:var(--ink3);
+  }
+  footer b{color:var(--ink2)}
+
+  @media (max-width:640px){
+    .hero{padding-top:30px}
+    .node{min-width:calc(50% - 6px)}
+    .arrow{display:none}
+    .searchbox kbd{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .card{animation:none}
+    .qcard,.chip,.copy-btn{transition:none}
+  }
+</style>
+</head>
+<body data-page-node-id="E2JtXy9nmERx3D3LQXhS8J">
+
+<header data-page-node-id="QsLR1cIKYc02sJR6Bqh7Vk" class="hero">
+  <div data-page-node-id="iG4SKit4l1aH0lpW6BnJP3" class="kicker"><!--pnid:RsrHw1C3eXN4BBwlK7LRYB-->✦ VIBECODING × FRONTEND</div>
+  <h1 data-page-node-id="cWcVnqlzFPFR2Cs7267Uvq"><!--pnid:jjJDr0bNipQelsEM6XGTMI-->前端交互<span data-page-node-id="otw3PXpgpOVnHStnR0rJEQ" class="grad"><!--pnid:f4eYQbLhBQmEXHQ3IQE7SG-->术语词典</span></h1>
+  <p data-page-node-id="zEofyIrKtiKgrzC55OnZIe" class="subtitle"><!--pnid:hzpK8onVKAhBb7lQ2LcsLk-->把脑子里的画面，翻译成 AI 一听就懂的术语。每条术语都配「说人话」和可直接复制的提示词说法——少猜一轮，少改三版。</p>
+  <div data-page-node-id="PZozGgE70OHfDVtqIsinVU" class="stats">
+    <span data-page-node-id="5j1YWz182Gpd4Ryb7NDf3P" class="stat"><b data-page-node-id="bkPuTl2UErKQLn97ZqEMPE"><!--pnid:57jP1kwU7CPqfzjAVFkEWo-->85</b><!--pnid:rwhqcEh9eRo1zb2fdGiHg2--> 个术语</span>
+    <span data-page-node-id="9F5PHOCFNkay3cz1ecZw7d" class="stat"><b data-page-node-id="kaqMycIT1uQNxSkUNjRnzb"><!--pnid:6mVfptsqMxITozSUvBePjM-->30</b><!--pnid:Ggpi1BqCc7zxSbLpVjwLRC--> 条人话速查</span>
+    <span data-page-node-id="MkU2DmU8CodwoT3aEeYjiN" class="stat"><b data-page-node-id="Lv9QQt8dIYc5Dsr8pZUqF5"><!--pnid:k8p9nOjJqCa97GrLpeoQO4-->6</b><!--pnid:IV3zZmik8NyKaRuxyKtcBX--> 大分类</span>
+    <span data-page-node-id="1uDdBgTEE3xvnMgYbif59u" class="stat"><!--pnid:MmYh0aDfxFMxoOHOkUfSOD-->单文件 · 离线可用</span>
+  </div>
+</header>
+
+<div data-page-node-id="11ndsDCIchDvtyl5LsgC2l" class="ctrl">
+  <div data-page-node-id="xS5nfWOBF0v0FlOoJomqBR" class="ctrl-inner">
+    <div data-page-node-id="LaqsFB6o0DLhX7cX9wFloD" class="searchbox">
+      <svg data-page-node-id="tCgCMVmtRQI2wmoRB4jNng" fill="none" height="17" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewBox="0 0 24 24" width="17"><circle data-page-node-id="6i514zhm1r5zxtGZsWcaye" cx="11" cy="11" r="7"/><path data-page-node-id="Srrvg6CXz1DMxixo59SMR8" d="m20 20-3.5-3.5"/></svg>
+      <input data-page-node-id="EbZKk10cSNmhRCvvOuk2ux" aria-label="搜索前端交互术语" autocomplete="off" id="q" placeholder="搜术语、英文，或直接搜&quot;从底下弹出来&quot;这种人话…" type="text">
+      <kbd data-page-node-id="BKmq7zsvDfurbse5rnypaT"><!--pnid:Gt2TB8VQ57g8qcvUGGgPYT-->/</kbd>
+    </div>
+    <div data-page-node-id="yeWTmcQrD9sOYJrNGfedQw" class="chips" id="chips"></div>
+  </div>
+</div>
+
+<main data-page-node-id="BLYbPBDmQLrBvdSNaDt5FI">
+  <p data-page-node-id="KZB3yYMTE78cQnU6Me6Rgm" aria-atomic="true" aria-live="polite" class="result-line" id="resultLine" role="status"></p>
+  <p aria-atomic="true" aria-live="polite" class="sr-only" id="copyStatus" role="status"></p>
+
+  <!--pnid:t71F1k1OzTaP7cxOMKaTEW--><!-- 五要素模板 -->
+  <section data-page-node-id="PjQWRMQq0DOUs3nSbkBhdy" class="formula" id="formula">
+    <h2 data-page-node-id="XMZxJuiqtAmSU6OXBCwD7O"><!--pnid:NXeBcPCH3zSTUhRIR1WNMi-->🧩 交互描述五要素</h2>
+    <p data-page-node-id="UawrfPeMvXYbHapMglvBwO" class="sub"><!--pnid:51h1NwOoUvVF08kJ7RtSL4-->一条合格的交互提示词 = 五个要素。缺一个，AI 就要靠猜。</p>
+    <div data-page-node-id="hOOzQRbXa47xsDAaVJGnZK" class="flow">
+      <div data-page-node-id="oq2Pc2uyUGdLLHr5t3dXQc" class="node"><div data-page-node-id="jhWdk72xs7ZjzpDMeZl0Tu" class="no"><!--pnid:r12n5zr4KrEdjVsZwT3TEE-->01</div><div data-page-node-id="sLSxIpShnhiPQFDezLJYsc" class="nm"><!--pnid:2I74a5puuAdU9uhIe0VDu0-->触发器</div><div data-page-node-id="Gi4igoYeaV1vaUNLu1CAam" class="ds"><!--pnid:d5mF4ndiIa34uYE44mdpXG-->用户做了什么动作</div></div>
+      <span data-page-node-id="c1ZKn2HFoLFDH5itdf1mKj" class="arrow"><!--pnid:x0F8VoAyPY9fRTIP0gMcvV-->→</span>
+      <div data-page-node-id="GoiN29J2WZxmklgeurT5Zc" class="node"><div data-page-node-id="3QowxZGgT6soqi4Lh5rLxX" class="no"><!--pnid:lg72wUPUQY79av1fXECiyn-->02</div><div data-page-node-id="zzJfbRgn96gGYiRqKeaXc7" class="nm"><!--pnid:fkWgcbLc6qraSZwuMcj56M-->目标</div><div data-page-node-id="PBMwm08jy3mmbRTKGxLReO" class="ds"><!--pnid:nVKEcB4sKoq3tbY8WJfcsq-->哪个元素发生变化</div></div>
+      <span data-page-node-id="f9rrrIfmCdvARovDhHo6F5" class="arrow"><!--pnid:IUmRj1qF07iwsI72qS4rlX-->→</span>
+      <div data-page-node-id="pA6WFn6KTFBxwh6FGdy1zf" class="node"><div data-page-node-id="l1bKKxXytPNZ47jbaZ5MnC" class="no"><!--pnid:HClBfW3bkZXLvfNdPtc8xT-->03</div><div data-page-node-id="C2t9u0LNvSPvxsqAgt1xhQ" class="nm"><!--pnid:PP1EnHJZ8GUQLHdJVUivur-->动作</div><div data-page-node-id="iUlzKRe9c0wUc9s9qKHagn" class="ds"><!--pnid:w7omRSkJuApwcS60DHx5mn-->发生了什么（时长/缓动）</div></div>
+      <span data-page-node-id="5xhysQDdSfHCMi9rDyZCUs" class="arrow"><!--pnid:U7iCVEYfgZqC0mBpiEwNED-->→</span>
+      <div data-page-node-id="bYZUptjqiFHNv0bvQ2Z8zi" class="node"><div data-page-node-id="ssNRr64UHMbDXUdgPx99yQ" class="no"><!--pnid:VLXhthpyaXKWmeIDwH68ZL-->04</div><div data-page-node-id="t7dwFBWu8C0GAE4NqRZhX5" class="nm"><!--pnid:g4ucYY7oBbgEdQFtNAB1Nn-->反馈</div><div data-page-node-id="UhtuSUuTT9RA8bgrFspKUe" class="ds"><!--pnid:MzRkMUMFsGZdZgrJC5TmoV-->用户感知到什么</div></div>
+      <span data-page-node-id="pd4bUszsrhKnTmmKjnBym0" class="arrow"><!--pnid:dhI06phvHoO9pklyzwhxyv-->→</span>
+      <div data-page-node-id="ts2GoAL99K5QqHD5L8YkG4" class="node"><div data-page-node-id="72tfGGtcD7hZfQaO5kl4T6" class="no"><!--pnid:byE3hJiJ5Ri9FGDC5prjBy-->05</div><div data-page-node-id="kYfUZUDatX5DPqwPA7D7uE" class="nm"><!--pnid:qQLb40ljU2nd0QgmwxwZiO-->边界</div><div data-page-node-id="5VoH71sWzAjMMH1xyUAu1d" class="ds"><!--pnid:NLEQ1fJOeieASKaxMeIFa9-->异常情况怎么办</div></div>
+    </div>
+    <div data-page-node-id="41iL7jRue7UyMNrlbHcsIe" class="example">
+      <b data-page-node-id="UbvfaNaNxorsj2yFo3GR5y"><!--pnid:5V8tky5cDdK4vRbd5BISBN-->示例：</b><!--pnid:mju0xUjqcAEymhUWEz2hrh-->用户点击【选包】按钮（触发）→ 唤起半屏弹窗（目标）→ 从底部滑入 300ms ease-out，展示 6 个包位卡片（动作）→ 点选卡片高亮描边 + 轻震动（反馈）→ 库存为 0 置灰禁用；点遮罩关闭；连点只触发一次（边界）
+    </div>
+  </section>
+
+  <!--pnid:LWeRjPu5MmZy4k3LovDVXM--><!-- 人话速查 -->
+  <section data-page-node-id="t5NGhemBUQnFQbHBsbn70I" id="quickSection">
+    <div data-page-node-id="159X3vsIv7xvSePN3OSMNe" class="sec-head">
+      <h2 data-page-node-id="JY0EFBEt3jf8Tfc7VoWDqn"><!--pnid:O4W6pG42fe8jZh1eiJXjAe-->🔥 人话速查</h2>
+      <span data-page-node-id="xk6Jup2DjFWMEjDj07xI0O" class="en"><!--pnid:eCJ3z0eSfy0Pqx2JLkXMKH-->SPEAK → TERM</span>
+      <span data-page-node-id="4WiWVH1jKMJ9GPOMVUZ4uj" class="cnt" id="quickCnt"></span>
+    </div>
+    <div data-page-node-id="1US1txzia8lnTRU6D91wWU" class="quick-grid" id="quickGrid"></div>
+  </section>
+
+  <!--pnid:Bm1uDP0EPuZ5XB23TicZtW--><!-- 术语区 -->
+  <section data-page-node-id="pok306hSI3s5lTQd8jg8Hk" id="termsSection">
+    <div data-page-node-id="mN7KP3FXS11h90EEEdKJQC" class="sec-head">
+      <h2 data-page-node-id="qqd4eyCQkg4wwjl0l0JKhk" id="termsTitle"><!--pnid:ws7v9JcU7AsBChH1j1mJ8K-->📚 全部术语</h2>
+      <span data-page-node-id="XsKlqA5BDiTzcZEPAHxp2y" class="en" id="termsEn"></span>
+      <span data-page-node-id="SWmsjyX4CepEMXrvPazW43" class="cnt" id="termsCnt"></span>
+    </div>
+    <div data-page-node-id="mNddr8d1y8K0dhgCX9GZc3" class="grid" id="grid"></div>
+    <div data-page-node-id="QK0zq1sdt2j8GOk9hdZzrj" class="empty" id="empty" style="display:none">
+      <div data-page-node-id="hoGa2XLGJsqw3Q8AMqPZEC" class="big"><!--pnid:1PuOMjkTlKUSFMp7ZG8Kia-->🕵️</div><!--pnid:sVnrxGKsJLbGOwGJnNyNhk-->
+      没有匹配的术语——试着换个说法，或用《人话速查》里的口语描述再搜一次。
+    </div>
+  </section>
+</main>
+
+<footer data-page-node-id="mqQGbk16RmHwRZDimJNQSb">
+  <b data-page-node-id="F6vG3oRWHq3rajpc6GZbzE"><!--pnid:hfw38WwMNwV8VCcENIv4K5-->Vibecoding 前端交互术语词典</b><!--pnid:x0iMUHFsPKABGUg6hrFxIE--> · 85 terms / 30 quick-maps · 点击提示词块右上角即可复制 · 配套 <b data-page-node-id="MLqQ6trYhRoaLwsSX30VhP"><!--pnid:FhGgNVwIoF8xgAOtUk1c45-->.md</b><!--pnid:a4RQbm75hpZ5HBCX2e49Ey--> 版本便于沉淀归档
+</footer>
+
+<script data-page-node-id="hXvUNUeLOIgYP3e5O4Hfmh" data-pnid-children="EziemZw8y2WdiaOkSmp3OX">
+/* ================= 数据 ================= */
+const CATS = [
+  {id:'all',    icon:'📚', name:'全部'},
+  {id:'quick',  icon:'🔥', name:'人话速查'},
+  {id:'layout', icon:'📦', name:'布局与容器', en:'Layout & Container',  desc:'内容住在哪里'},
+  {id:'gesture',icon:'👆', name:'手势与触摸', en:'Gesture & Touch',     desc:'动作 + 方向 + 松手后发生什么'},
+  {id:'motion', icon:'🎬', name:'动效与缓动', en:'Motion & Easing',     desc:'时长 + 手感 + 什么属性在变'},
+  {id:'state',  icon:'💡', name:'状态与反馈', en:'State & Feedback',    desc:'加载中 / 成功 / 失败各显示什么'},
+  {id:'nav',    icon:'🧭', name:'导航与滚动', en:'Navigation & Scroll', desc:'从哪到哪 + 滚动到哪里发生什么'},
+  {id:'ctrl',   icon:'🎛', name:'控件与表单', en:'Controls & Form',     desc:'默认态 → 交互态 → 异常态 → 极值'},
+];
+
+const TERMS = [
+/* ===== 布局与容器 ===== */
+{c:'layout',zh:'弹窗（模态框）',en:'Modal / Dialog',def:'覆盖在页面上方的独立内容层，出现时阻断底层操作，通常带遮罩与关闭按钮。',say:'点一下，屏幕中间弹出来一个框，后面点不了了。',tip:'点击按钮弹出居中模态弹窗：半透明遮罩 + 圆角卡片，点遮罩或关闭按钮关闭，内容支持内部滚动。'},
+{c:'layout',zh:'半屏弹窗',en:'Half-screen Modal',def:'从底部弹出、约占屏幕一半高度的弹窗，微信小程序原生形态，适合选择 / 筛选 / 确认类轻任务。',say:'从底下弹出来一个半高的框，上面半屏还能看见。',tip:'点击选包按钮唤起半屏弹窗：底部对齐、圆角 24px、顶部带把手条，遮罩点击关闭。'},
+{c:'layout',zh:'底部抽屉',en:'Bottom Sheet',def:'从底部滑出的面板，可拖动把手在「半开 / 全开 / 收起」间切换，比半屏弹窗多了高度可拖。',say:'从底下拉出来一块板子，能拽高拽矮。',tip:'底部弹出 Bottom Sheet，支持拖拽把手在半屏和全屏间切换，松手自动吸附到最近档位。'},
+{c:'layout',zh:'侧边抽屉',en:'Drawer',def:'从屏幕左 / 右边缘滑出的窄栏，常用于导航菜单或筛选面板。',say:'像抽屉一样从旁边拉出个菜单。',tip:'点击汉堡按钮，左侧滑出导航抽屉，宽 78vw，带遮罩，点遮罩或左滑关闭。'},
+{c:'layout',zh:'气泡弹层',en:'Popover',def:'锚定在触发元素旁弹出的小浮层，点击外部关闭，内含可操作内容。',say:'按钮旁边冒出个小气泡，里面还能点东西。',tip:'点击更多按钮，在其右下方弹出 Popover 气泡菜单，点击遮罩关闭，气泡带小箭头指向按钮。'},
+{c:'layout',zh:'手风琴',en:'Accordion',def:'一组可展开 / 收起的内容区块，点击标题切换，常见「一次只展开一项」。',say:'点标题展开一段内容，再点收起来。',tip:'FAQ 列表用手风琴交互：点击标题展开答案，带高度过渡动画，同时只展开一项，再点已展开项则收起。'},
+{c:'layout',zh:'标签页',en:'Tabs',def:'页内内容视图切换控件，选中项有下划线 / 高亮指示。',say:'上面一排按钮，点哪个下面换成哪个。',tip:'顶部三个标签页（全部 / 待付款 / 已完成），选中项文字加粗并显示下划线滑块，内容区支持左右滑动联动。'},
+{c:'layout',zh:'轮播',en:'Carousel / Swiper',def:'可横向滑动的卡片序列，常配自动播放与指示器圆点。',say:'一排图片左右划着看，底下小圆点。',tip:'首屏 Banner 轮播：自动播放间隔 4s，圆点指示器，支持循环滑动和手势拖拽。'},
+{c:'layout',zh:'吸顶 / 吸底',en:'Sticky',def:'元素滚动到指定位置后固定贴边不动（导航吸顶、操作栏吸底）。',say:'往下滑，顶栏钉在顶上不动了。',tip:'分类导航栏滚动到顶时吸顶固定并加底部投影；底部操作按钮栏固定吸底并适配安全区。'},
+{c:'layout',zh:'安全区',en:'Safe Area',def:'避开刘海、状态栏和底部 Home 指示条的系统保留区域。',say:'别让刘海和底部小黑条挡住内容。',tip:'底部按钮栏预留安全区距离，使用 env(safe-area-inset-bottom) 适配全面屏。'},
+{c:'layout',zh:'瀑布流',en:'Masonry',def:'不等高卡片按多列排列、逐个向下填充的布局，信息流常用。',say:'像瀑布一列列往下排，卡片高低不平。',tip:'商品列表用两列瀑布流：卡片等宽不等高，图片自适应高度，滚动到底追加加载。'},
+{c:'layout',zh:'遮罩',en:'Mask / Overlay / Scrim',def:'弹窗与底层内容之间的半透明层，用于聚焦视线、点击关闭。',say:'弹窗后面变暗的那一层。',tip:'弹窗出现时背景覆盖 rgba(0,0,0,0.5) 遮罩，200ms 淡入，点击遮罩关闭弹窗并阻止事件穿透。'},
+{c:'layout',zh:'悬浮操作按钮',en:'FAB (Floating Action Button)',def:'悬浮在内容之上、固定位置的圆形按钮，承载最高频操作。',say:'飘在角落里的那个圆按钮。',tip:'右下角悬浮发布按钮（FAB）：固定定位距底部 90px，带投影，滚动超过一屏后淡入显示。'},
+{c:'layout',zh:'步骤条',en:'Steps',def:'显示多步骤流程进度的导航指示。',say:'顶上 1-2-3-4 步的进度指示。',tip:'订单流程顶部步骤条：选品 → 确认 → 支付，当前步骤高亮，已完成步骤打勾。'},
+
+/* ===== 手势与触摸 ===== */
+{c:'gesture',zh:'点击',en:'Tap / Click',def:'最基本的点按操作，专业细节在按压态反馈。',say:'点一下（要有反馈才专业）。',tip:'所有可点击元素添加按压态反馈：按下缩小到 0.97 并降低透明度，松手恢复。'},
+{c:'gesture',zh:'双击',en:'Double Tap',def:'快速连点两下触发，如双击点赞、双击放大。',say:'快速点两下。',tip:'图片支持双击放大到 2 倍、再双击恢复，缩放以点击位置为中心。'},
+{c:'gesture',zh:'长按',en:'Long Press',def:'按住约 500ms 触发的操作，如呼出菜单、进入多选。',say:'按住不放半秒，弹出菜单。',tip:'长按消息 500ms 弹出操作菜单（复制 / 撤回 / 删除），触发瞬间元素轻微缩放表示已生效。'},
+{c:'gesture',zh:'滑动',en:'Swipe',def:'快速划动手势，具有方向语义（左滑 / 右滑 / 上滑）。',say:'快速一划。',tip:'卡片支持左滑标记已读、右滑归档，滑动超过阈值后执行并伴随卡片滑出动画。'},
+{c:'gesture',zh:'拖拽',en:'Drag',def:'手指按住并持续移动，元素实时跟随。',say:'按住拖着走，实时跟手。',tip:'弹窗内图片可拖拽移动，跟手无延迟，限制在边界内。'},
+{c:'gesture',zh:'拖放排序',en:'Drag & Drop / Sortable',def:'拖起元素到目标位置释放，完成排序或转移。',say:'拖到哪儿松手就排到哪儿。',tip:'清单项支持长按拖拽排序：拖动时该项放大带投影，其余项自动腾位补位动画。'},
+{c:'gesture',zh:'捏合缩放',en:'Pinch to Zoom',def:'双指捏合 / 张开缩放内容。',say:'两根手指放大缩小。',tip:'图片查看器支持双指捏合缩放 1–3 倍，松手后小于 1 倍自动回弹。'},
+{c:'gesture',zh:'下拉刷新',en:'Pull to Refresh',def:'列表顶部继续下拉出现加载指示器，松手触发刷新。',say:'往下一拽出转圈，松手刷新。',tip:'页面支持下拉刷新：下拉露出 loading 指示器，松手后请求数据，成功后 Toast 提示「已更新」。'},
+{c:'gesture',zh:'触底加载',en:'Load More / Reach Bottom',def:'滚动接近底部时自动请求并追加下一页数据。',say:'快划到底自动加载下一页。',tip:'列表滚动到距底部 100px 时自动加载下一页，底部显示「加载中…」，全部加载完显示「没有更多了」。'},
+{c:'gesture',zh:'侧滑操作',en:'Swipe Actions',def:'列表项侧向滑动，露出隐藏的快捷操作按钮。',say:'列表项左边一划，露出删除按钮。',tip:'列表项左滑露出红色「删除」按钮，点击其他区域自动收回。'},
+{c:'gesture',zh:'跟手与回弹',en:'Tracked & Spring Back',def:'元素跟随手指移动，松手后弹性回到原位或吸附目标。',say:'跟着手指动，松手 Q 弹回去。',tip:'抽赏卡片可左右拖动且实时跟手，松手根据速度弹性吸附到相邻卡片，带回弹动画。'},
+{c:'gesture',zh:'吸附',en:'Snap',def:'滚动 / 滑动停止时自动对齐到预设位置（整页、卡片中心）。',say:'松手自动停在该停的位置。',tip:'横向卡片列表滚动带 snap 吸附：松手自动对齐一张卡片居中，scroll-snap-type: x mandatory。'},
+{c:'gesture',zh:'边缘滑动返回',en:'Edge Swipe Back',def:'从屏幕边缘横向滑动返回上一页。',say:'屏幕边上往里划，返回上一页。',tip:'详情页支持左侧边缘右滑返回手势，滑动过程实时预览上一页。'},
+{c:'gesture',zh:'刮刮卡',en:'Scratch Card',def:'手指刮开涂层逐渐显示底层内容的交互（canvas 实现）。',say:'刮开涂层显示结果，像刮刮乐。',tip:'用 canvas 实现刮刮卡：手指涂抹消除涂层，刮开面积超 60% 自动全部揭开显示结果。'},
+
+/* ===== 动效与缓动 ===== */
+{c:'motion',zh:'过渡',en:'Transition',def:'状态变化时的平滑动画（颜色、位置、大小等属性的变化过程）。',say:'状态切换时平滑变化，不要瞬间跳。',tip:'hover 状态颜色变化加 150ms 过渡，不要瞬间跳变。'},
+{c:'motion',zh:'动画',en:'Animation',def:'由关键帧序列驱动的连续变化。',say:'一整套连续的变化。',tip:'图标加轻微呼吸动画：2s 循环，scale 1 → 1.05 → 1。'},
+{c:'motion',zh:'缓动',en:'Easing',def:'控制动画速度曲线的参数；ease-out（快进慢出）最常用于进场，linear 显得机械。',say:'动画是「唰一下慢慢停」还是「匀速地动」。',tip:'弹窗进场用 ease-out 250ms，不要 linear，要快出慢停的感觉。'},
+{c:'motion',zh:'弹性动画',en:'Spring',def:'模拟弹簧物理的动画，有自然的过冲和回弹。',say:'像弹簧一样 Q 弹，过头了弹回来。',tip:'开关切换用 spring 弹性动画，带轻微过冲回弹，stiffness 300 / damping 20。'},
+{c:'motion',zh:'淡入淡出',en:'Fade In / Fade Out',def:'透明度渐变过渡。',say:'慢慢显出来 / 淡下去。',tip:'弹窗关闭时 200ms 淡出后再移除节点，避免生硬消失。'},
+{c:'motion',zh:'滑入滑出',en:'Slide In / Slide Out',def:'位移进出场动画，需说明方向和距离。',say:'从上 / 下 / 左 / 右滑进来。',tip:'通知条从顶部滑入，3 秒后向上滑出。'},
+{c:'motion',zh:'缩放',en:'Scale',def:'大小变化动画；按压态常用 0.95–0.98 缩小。',say:'按下去缩小一点，松手弹回来。',tip:'按钮按下缩小到 0.96，松手回弹到 1，120ms。'},
+{c:'motion',zh:'3D 翻转',en:'Flip',def:'卡片沿 Y 轴翻面，卡牌 / 盲盒类核心动效。',say:'卡片翻个面，正面变反面。',tip:'点击卡牌 3D 翻转（rotateY 180deg，600ms），背面显示结果，翻转时加轻微缩放强调。'},
+{c:'motion',zh:'抖动',en:'Shake',def:'快速左右往复的强调动画，常用于错误提示。',say:'左右快速晃几下，提示出错。',tip:'表单校验失败时输入框水平抖动 3 次并闪红边。'},
+{c:'motion',zh:'弹跳',en:'Bounce',def:'落地 / 进场时的回弹效果。',say:'落地后 duang 地弹一下。',tip:'新卡片插入列表时从上方落入并轻微弹跳一次。'},
+{c:'motion',zh:'视差',en:'Parallax',def:'不同图层以不同速度移动形成的层次感。',say:'滚动时前后景速度不一样。',tip:'详情页头部图片以 0.5 倍速度跟随滚动，形成视差效果。'},
+{c:'motion',zh:'交错动画',en:'Stagger',def:'一组元素按序错开延迟依次入场。',say:'一堆元素排着队一个接一个进场。',tip:'列表项入场交错动画：每项延迟 50ms 依次淡入上移。'},
+{c:'motion',zh:'微交互',en:'Micro-interaction',def:'围绕单一任务的细粒度反馈动效。',say:'小而精致的反馈，点了有回应。',tip:'点赞按钮做微交互：点击时爱心放大爆开并飘出小粒子，取消时变灰缩小。'},
+{c:'motion',zh:'共享元素过渡',en:'Shared Element Transition / Hero',def:'同一元素在两个页面间平滑「飞行」衔接。',say:'点小图，它「飞」着变大铺满全屏。',tip:'点击列表缩略图，图片无缝放大过渡到详情页头图（共享元素动画）。'},
+{c:'motion',zh:'水波纹',en:'Ripple',def:'Material Design 风格，点击时从触点扩散的涟漪。',say:'点击处水波一样荡开。',tip:'按钮点击时从点击位置扩散水波纹效果，350ms 扩散后消失。'},
+{c:'motion',zh:'数字滚动',en:'Count Up',def:'数字从 0 滚动增长到目标值的动画，营销页常用。',say:'数字哗哗地涨上去。',tip:'金额数字滚动动画：从 0 滚到目标值，1s，ease-out，带千分位格式化。'},
+
+/* ===== 状态与反馈 ===== */
+{c:'state',zh:'加载指示',en:'Loading / Spinner',def:'请求进行中的视觉指示（转圈、进度）。',say:'转圈圈告诉大家「在加载了」。',tip:'点击提交后按钮进入 loading 态：显示旋转图标并禁用，防止重复提交。'},
+{c:'state',zh:'骨架屏',en:'Skeleton Screen',def:'用灰色形状块占位模拟真实内容布局的加载状态。',say:'加载时灰色块块把版面先占住。',tip:'页面加载时显示骨架屏（灰色圆角块模拟卡片布局），数据到达后交叉淡入真实内容。'},
+{c:'state',zh:'空状态',en:'Empty State',def:'无数据时的展示页：插画 + 文案 + 行动引导。',say:'没数据时给个插画加「去逛逛」按钮。',tip:'购物车为空时显示空状态：居中插画 + 「还没有商品」+「去逛逛」按钮。'},
+{c:'state',zh:'错误状态',en:'Error State',def:'请求失败时的提示与恢复入口。',say:'出错时给提示加重试按钮，别白屏。',tip:'请求失败显示错误占位：图标 + 「加载失败」+ 重试按钮，点击重试重新请求。'},
+{c:'state',zh:'轻提示',en:'Toast',def:'短暂浮层提示，自动消失，不可交互、不阻断操作。',say:'飘一条提示，自己消失，不挡操作。',tip:'保存成功后 Toast 提示「已保存」，1.5 秒自动消失，期间可继续操作。'},
+{c:'state',zh:'提示条',en:'Snackbar',def:'底部出现的提示条，可带一个操作按钮，比 Toast 停留久。',say:'底部滑出一条提示，还能点「撤销」。',tip:'删除后底部 Snackbar 提示「已删除」并带「撤销」按钮，5 秒后消失。'},
+{c:'state',zh:'气泡提示',en:'Tooltip',def:'hover / 长按出现的简短说明浮层，非模态。',say:'鼠标放图标上冒出来的小注释。',tip:'图标 hover 时显示 Tooltip 说明文字，小箭头指向图标，移开后消失。'},
+{c:'state',zh:'角标',en:'Badge',def:'图标 / 头像上的数字或红点，表示未读数或数量。',say:'图标右上角的小红点 / 数字。',tip:'底部 Tab 购物车图标显示数量角标，超过 99 显示 99+，为 0 时隐藏。'},
+{c:'state',zh:'触感反馈',en:'Haptic Feedback',def:'设备震动反馈（轻 / 中 / 重三档），增强操作确定感。',say:'点一下手机震一下。',tip:'抽中稀有款触发重震动，普通款轻震动；微信小程序用 wx.vibrateShort。'},
+{c:'state',zh:'进度指示',en:'Progress Bar / Ring',def:'任务完成度的可视化（条形 / 环形 / 百分比）。',say:'进度条，做到哪了。',tip:'上传文件显示进度条，百分比实时更新，完成后变绿打勾。'},
+{c:'state',zh:'禁用态',en:'Disabled',def:'不满足条件时控件置灰、不可点击。',say:'按钮置灰点不动。',tip:'未勾选协议时提交按钮置灰禁用，勾选后恢复可点并变主色。'},
+{c:'state',zh:'选中态',en:'Selected / Active State',def:'当前选中项的高亮视觉（描边、填充、对勾）。',say:'当前选中的那个高亮。',tip:'选包卡片点击后加 2px 主色描边 + 右上角对勾，再点取消选中。'},
+{c:'state',zh:'乐观更新',en:'Optimistic Update',def:'先立即更新 UI 再等服务端确认，失败再回滚，交互「零延迟」。',say:'先斩后奏——UI 先变，接口失败再变回来。',tip:'点赞采用乐观更新：点击立即变红 +1，接口失败再回滚并 Toast 提示。'},
+{c:'state',zh:'下拉关闭',en:'Pull to Dismiss',def:'弹窗 / 图片页顶部下拉超过阈值后关闭。',say:'往下拽图片，拽多了就关掉。',tip:'全屏图片预览支持下拉：超过 100px 松手关闭并缩小回原位，否则回弹。'},
+
+/* ===== 导航与滚动 ===== */
+{c:'nav',zh:'路由跳转',en:'Route / Navigate',def:'页面间跳转方式：保留跳转（navigateTo）、替换跳转（redirectTo）、Tab 跳转（switchTab）。',say:'页面之间怎么跳——留住前一页还是替换掉。',tip:'点击卡片 navigateTo 跳详情页；发布成功后 redirectTo 结果页（不可返回）；Tab 页用 switchTab。'},
+{c:'nav',zh:'底部标签栏',en:'Tab Bar',def:'固定在底部的主页面切换栏。',say:'底部一排主页面按钮。',tip:'底部 4 个 Tab：首页 / 分类 / 购物车 / 我的，当前 Tab 图标高亮变色。'},
+{c:'nav',zh:'无限滚动',en:'Infinite Scroll',def:'内容持续滚动、自动加载，无翻页。',say:'一直划一直有。',tip:'信息流无限滚动加载，触底自动请求下一页，无传统分页。'},
+{c:'nav',zh:'返回顶部',en:'Back to Top',def:'滚动超阈值后出现的回顶快捷按钮。',say:'划远了出现「回顶部」按钮。',tip:'页面滚动超过一屏后右下角出现返回顶部按钮，点击平滑滚回顶部。'},
+{c:'nav',zh:'锚点定位',en:'Anchor / Scroll Into View',def:'点击后平滑滚动到页面对应区块。',say:'点目录，页面滚到对应位置。',tip:'点击分类快捷入口，页面平滑滚动到对应区块，该分类标题吸顶。'},
+{c:'nav',zh:'面包屑',en:'Breadcrumb',def:'层级路径显示，可逐级返回。',say:'首页 / 列表 / 详情，逐级可返回。',tip:'后台顶部面包屑显示「首页 / 订单管理 / 详情」，各级可点击返回。'},
+{c:'nav',zh:'沉浸式',en:'Immersive Mode',def:'内容延伸到状态栏 / 导航栏下，全屏无边界感。',say:'内容顶到状态栏，全屏沉浸。',tip:'详情页自定义导航栏，头图延伸到状态栏下方实现沉浸式，滚动后导航栏渐显。'},
+{c:'nav',zh:'横向滚动区',en:'Horizontal Scroll',def:'一屏露出 3.5 张卡片暗示可滑动。',say:'露出半张卡，暗示能划。',tip:'推荐商品横向滚动：一屏显示 3.5 张卡片，两端渐隐遮罩暗示可继续滑动。'},
+{c:'nav',zh:'页面栈与返回',en:'Page Stack & Back',def:'页面按栈结构进出，返回即出栈回到上一页。',say:'一层层进，一层层原路返回。',tip:'详情页左上角返回按钮 navigateBack 一层；从分享直接进入时返回跳转首页。'},
+{c:'nav',zh:'平滑滚动',en:'Smooth Scroll',def:'滚动行为带缓动，而非瞬间跳转。',say:'平滑地滚过去，不要闪跳。',tip:'锚点跳转用平滑滚动 300ms，不要瞬间闪跳。'},
+{c:'nav',zh:'页面转场',en:'Page Transition',def:'页面切换时的进出场动画（滑入、淡入等）。',say:'换页面时有滑进滑出的动画。',tip:'新页面从右侧滑入、旧页面左移视差；返回时反向，形成层级方向感。'},
+{c:'nav',zh:'分享面板',en:'Share Sheet',def:'唤起系统 / 应用内分享面板。',say:'点分享，弹出系统那个分享面板。',tip:'点击分享按钮唤起系统 Share Sheet，支持生成分享卡片图。'},
+
+/* ===== 控件与表单 ===== */
+{c:'ctrl',zh:'输入框',en:'Input',def:'文本输入控件，专业细节在 placeholder、字数限制、清空按钮。',say:'输入框，灰字提示，能一键清空。',tip:'手机号输入框：placeholder「请输入手机号」，纯数字键盘，11 位限制，一键清空按钮。'},
+{c:'ctrl',zh:'下拉选择',en:'Select / Dropdown',def:'点击展开选项列表，选中回填。',say:'点开下拉列表选一项。',tip:'点击显示下拉选项列表，选中项打勾并回填到输入框，点外部关闭。'},
+{c:'ctrl',zh:'选择器',en:'Picker',def:'底部弹出的滚轮式选择器（日期 / 时间 / 城市）。',say:'底部滚轮，滚着选日期。',tip:'点击日期字段弹出底部滚轮日期选择器，确认后回填，格式 YYYY-MM-DD。'},
+{c:'ctrl',zh:'级联选择',en:'Cascader',def:'选项按层级联动，上级选择决定下级选项。',say:'选了省才出市，选了市才出区。',tip:'省市区三级联动：选择省后加载市，选择市后加载区，支持回显已选路径。'},
+{c:'ctrl',zh:'开关',en:'Switch / Toggle',def:'二值状态切换控件。',say:'小滑块开关，左右拨。',tip:'消息通知开关：点击滑块滑动切换，开为主色、关为灰色，带 spring 弹性动画。'},
+{c:'ctrl',zh:'复选与单选',en:'Checkbox & Radio',def:'多选（打勾）与单选（点亮）控件。',say:'多选打勾，单选点亮。',tip:'支付方式单选（微信 / 支付宝）：选中项圆形图标填充变色，默认选第一个。'},
+{c:'ctrl',zh:'步进器',en:'Stepper',def:'数量加减控件，带上下限约束。',say:'数量加减器，+ 和 −。',tip:'数量步进器：+ / − 按钮，到 1 时减号禁用，到库存上限时加号禁用，支持直接输入。'},
+{c:'ctrl',zh:'滑块',en:'Slider',def:'拖动选择数值或区间的控件。',say:'拖动滑块选数值 / 区间。',tip:'价格筛选双滑块选择区间：拖动实时显示价格范围，已选段轨道高亮。'},
+{c:'ctrl',zh:'评分',en:'Rating',def:'星级打分控件，支持半星精度。',say:'星星评分，可点半星。',tip:'5 星评分：支持点击和滑动选择，半星精度，选中星星放大跳动反馈。'},
+{c:'ctrl',zh:'搜索框',en:'Search Bar',def:'搜索输入 + 历史 / 联想词的组合控件。',say:'搜索框，带历史和联想词。',tip:'搜索输入 debounce 300ms 后请求联想词；未输入时显示历史搜索和热搜榜。'},
+{c:'ctrl',zh:'虚拟列表',en:'Virtual List',def:'只渲染可视区域的列表项，万级数据不卡顿。',say:'万条数据只画看得见的，不卡。',tip:'排队列表用虚拟列表实现：只渲染可视区域 ±5 条，万级数据滚动不卡。'},
+{c:'ctrl',zh:'懒加载',en:'Lazy Load',def:'资源进入视口附近才开始加载。',say:'图片快到眼前了才加载。',tip:'列表图片懒加载：进入视口前 200px 开始加载，加载前显示灰色占位图。'},
+{c:'ctrl',zh:'防抖与节流',en:'Debounce & Throttle',def:'防抖＝停止操作后再执行（搜索输入）；节流＝固定频率执行（滚动监听）。',say:'停一下再执行 / 固定频率执行。',tip:'搜索输入用 debounce 300ms；滚动位置监听用 throttle 100ms，避免高频触发。'},
+{c:'ctrl',zh:'表单校验',en:'Form Validation',def:'按规则检查输入并给出错误提示。',say:'失焦就检查，红了就提示。',tip:'输入失焦时校验：错误时红边 + 下方红色错误文案；提交时整表校验并滚动定位到第一个错误项。'},
+{c:'ctrl',zh:'跑马灯',en:'Marquee',def:'文字循环滚动效果，公告栏常用。',say:'公告文字滚起来。',tip:'顶部公告跑马灯：文字超长时无缝循环滚动，hover 暂停。'},
+];
+
+const QUICK = [
+{say:'点一下，从屏幕底下弹出半个屏幕的框',term:'半屏弹窗 Half-screen Modal',tip:'唤起半屏弹窗：底部对齐、顶部把手条，点遮罩关闭。'},
+{say:'弹窗出来时背景变黑变暗的那一层',term:'遮罩 Mask',tip:'背景 rgba(0,0,0,0.5) 遮罩，点击关闭弹窗。'},
+{say:'点错了，框框晃一晃',term:'抖动动画 Shake',tip:'校验失败输入框水平抖动 3 次并闪红边。'},
+{say:'图片跟着手指动，松手弹回去',term:'跟手拖拽 + Spring 回弹',tip:'拖动实时跟手，松手 spring 弹性回弹。'},
+{say:'划到底部自动加载更多',term:'触底加载 Load More',tip:'距底部 100px 自动请求下一页。'},
+{say:'往下一拽出现转圈圈，松手刷新',term:'下拉刷新 Pull to Refresh',tip:'下拉露出 loading，松手刷新后 Toast 提示。'},
+{say:'列表项左边滑一下，露出删除按钮',term:'侧滑操作 Swipe Actions',tip:'左滑露出删除按钮，点空白处收回。'},
+{say:'列表几千条，怕卡',term:'虚拟列表 Virtual List',tip:'只渲染可视区域 ±5 条。'},
+{say:'图片太多，怕慢',term:'懒加载 Lazy Load',tip:'进入视口前 200px 才加载，灰图占位。'},
+{say:'按住不动，弹出菜单',term:'长按 Long Press',tip:'长按 500ms 弹出操作菜单。'},
+{say:'两根手指放大缩小',term:'捏合缩放 Pinch to Zoom',tip:'双指捏合缩放 1–3 倍，小于 1 倍自动回弹。'},
+{say:'动画要有 Q 弹的感觉',term:'弹性动画 Spring',tip:'spring 物理曲线，带过冲回弹。'},
+{say:'列表内容一个接一个冒出来',term:'交错动画 Stagger',tip:'每项延迟 50ms 依次淡入上移。'},
+{say:'图标右上角的小红点 / 数字',term:'角标 Badge',tip:'超 99 显示 99+，为 0 隐藏。'},
+{say:'飘一条提示出来，自己会消失',term:'Toast',tip:'1.5s 自动消失，不阻断操作。'},
+{say:'加载时灰色块块占着位置',term:'骨架屏 Skeleton',tip:'灰块模拟布局，数据到达交叉淡入。'},
+{say:'点了按钮变转圈，防止重复点',term:'Loading 态按钮',tip:'提交后按钮 loading 并禁用。'},
+{say:'点赞马上变红，失败再变回来',term:'乐观更新 Optimistic Update',tip:'先改 UI，接口失败回滚 + Toast。'},
+{say:'顶部导航滚上去就钉住',term:'吸顶 Sticky',tip:'position: sticky 吸顶 + 底部投影。'},
+{say:'底部按钮一直钉在屏幕底',term:'吸底操作栏',tip:'固定底部 + 安全区适配。'},
+{say:'别让 iPhone 底部小黑条挡住内容',term:'安全区 Safe Area',tip:'env(safe-area-inset-bottom)。'},
+{say:'卡片正面翻到反面',term:'3D 翻转 Flip',tip:'rotateY 180deg，600ms，翻面显示结果。'},
+{say:'点小图直接放大铺满看大图',term:'图片预览 / 共享元素过渡',tip:'全屏预览，双指缩放，下滑关闭。'},
+{say:'卡片滑动松手自动停在该停的位置',term:'吸附 Snap',tip:'scroll-snap 松手对齐卡片居中。'},
+{say:'输入停一下再搜，别搜太频繁',term:'防抖 Debounce',tip:'debounce 300ms 后再请求。'},
+{say:'没数据时给个插画加按钮',term:'空状态 Empty State',tip:'居中插画 + 文案 + 引导按钮。'},
+{say:'点击时手机震一下',term:'触感反馈 Haptic',tip:'wx.vibrateShort 轻震动。'},
+{say:'顶部 1-2-3-4 步那个进度',term:'步骤条 Steps',tip:'当前步高亮，已完成打勾。'},
+{say:'上面一排按钮，点哪个下面换哪个',term:'标签页 Tabs',tip:'选中下划线滑块 + 左右滑动联动。'},
+{say:'刮开涂层显示结果',term:'刮刮卡 Scratch',tip:'canvas 刮开超 60% 自动全开显示结果。'},
+];
+
+/* ================= 渲染 ================= */
+const $=id=>document.getElementById(id);
+let activeCat='all', query='';
+
+// 搜索索引
+TERMS.forEach(t=>t._idx=(t.zh+t.en+t.def+t.say+t.tip+t.c).toLowerCase());
+QUICK.forEach(t=>t._idx=(t.say+t.term+t.tip).toLowerCase());
+
+function renderChips(){
+  $('chips').innerHTML=CATS.map(c=>{
+    let n=c.id==='all'?TERMS.length:(c.id==='quick'?QUICK.length:TERMS.filter(t=>t.c===c.id).length);
+    return `<button class="chip${activeCat===c.id?' on':''}" aria-pressed="${activeCat===c.id}" data-cat="${c.id}">${c.icon} ${c.name}<span class="n">${n}</span></button>`;
+  }).join('');
+}
+
+function cardHTML(t,i){
+  return `<article class="card" style="animation-delay:${Math.min(i*25,400)}ms">
+    <div class="card-head"><h3>${t.zh}</h3><span class="en mono">${t.en}</span></div>
+    <p class="def">${t.def}</p>
+    <p class="say">${t.say}</p>
+    <div class="tip">
+      <div class="tip-bar"><span>这样对 AI 说</span><button class="copy-btn" data-copy="${encodeURIComponent(t.tip)}">⧉ 复制</button></div>
+      <p class="tip-text">${t.tip}</p>
+    </div>
+  </article>`;
+}
+
+function quickHTML(t,i){
+  return `<button type="button" class="qcard" data-copy="${encodeURIComponent(t.tip)}" title="点击复制提示词">
+    <span class="say">${t.say}</span>
+    <span class="to"><span class="arr">→</span><span class="term mono">${t.term}</span><span class="cp">⧉ 复制提示词</span></span>
+  </button>`;
+}
+
+function render(){
+  const q=query.trim().toLowerCase();
+  const words=q?q.split(/\s+/):[];
+
+  const matchQ=t=>words.every(w=>t._idx.includes(w));
+
+  // 速查区：显示条件 = 分类为 all/quick，且（无搜索词 或 速查有命中）
+  const quickHit=QUICK.filter(matchQ);
+  const termHit=TERMS.filter(t=>matchQ(t)&&(activeCat==='all'||activeCat==='quick'||t.c===activeCat));
+
+  // 分类标题
+  const cat=CATS.find(c=>c.id===activeCat);
+  if(activeCat==='all'){$('termsTitle').textContent='📚 全部术语';$('termsEn').textContent='ALL TERMS';}
+  else if(activeCat==='quick'){$('termsTitle').textContent='🔥 人话速查';$('termsEn').textContent='SPEAK → TERM';}
+  else{$('termsTitle').textContent=cat.icon+' '+cat.name;$('termsEn').textContent=cat.en;}
+
+  // 渲染速查
+  const showQuick=(activeCat==='all'||activeCat==='quick')&&(words.length===0||quickHit.length>0);
+  $('quickSection').style.display=showQuick?'':'none';
+  if(showQuick){
+    $('quickCnt').textContent=words.length?`${quickHit.length} 条命中`:`共 ${QUICK.length} 条`;
+    $('quickGrid').innerHTML=(words.length?quickHit:QUICK).map(quickHTML).join('');
+  }
+
+  // 渲染术语
+  if(activeCat==='quick'){
+    $('termsSection').style.display='none';
+  }else{
+    $('termsSection').style.display='';
+    $('termsCnt').textContent=`${termHit.length} / ${TERMS.length}`;
+    $('grid').innerHTML=termHit.map(cardHTML).join('');
+    $('empty').style.display=termHit.length?'none':'';
+  }
+
+  // 结果行
+  const resultLine=$('resultLine');
+  resultLine.replaceChildren();
+  if(words.length){
+    const queryText=document.createElement('b');
+    const termCount=document.createElement('b');
+    const quickCount=document.createElement('b');
+    queryText.textContent=query.trim();
+    termCount.textContent=termHit.length;
+    quickCount.textContent=quickHit.length;
+    resultLine.append('搜索「',queryText,'」：命中 ',termCount,' 个术语、',quickCount,' 条速查');
+    if(activeCat!=='all'&&activeCat!=='quick')resultLine.append('（当前分类内）');
+  }
+}
+
+/* ================= 事件 ================= */
+$('chips').addEventListener('click',e=>{
+  const chip=e.target.closest('.chip'); if(!chip)return;
+  activeCat=chip.dataset.cat;
+  renderChips();render();
+});
+
+const input=$('q');
+input.addEventListener('input',()=>{query=input.value;render()});
+document.addEventListener('keydown',e=>{
+  if(e.key==='/'&&document.activeElement!==input){e.preventDefault();input.focus()}
+  if(e.key==='Escape'&&document.activeElement===input){input.value='';query='';render();input.blur()}
+});
+
+async function copyText(text,trigger){
+  let copied=false;
+  try{await navigator.clipboard.writeText(text);copied=true}
+  catch{
+    const ta=document.createElement('textarea');ta.value=text;
+    ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);
+    ta.select();
+    try{copied=document.execCommand('copy')}catch{copied=false}
+    ta.remove();
+  }
+
+  const feedback=trigger.classList.contains('copy-btn')?trigger:trigger.querySelector('.cp');
+  const old=feedback.dataset.copyLabel||feedback.textContent;
+  feedback.dataset.copyLabel=old;
+  if(feedback.copyResetTimer)clearTimeout(feedback.copyResetTimer);
+  feedback.textContent=copied?'✓ 已复制':'复制失败';
+  feedback.classList.toggle('ok',copied);
+  $('copyStatus').textContent=copied?'提示词已复制':'复制失败，请手动复制提示词';
+  feedback.copyResetTimer=setTimeout(()=>{
+    feedback.textContent=old;
+    feedback.classList.remove('ok');
+    delete feedback.copyResetTimer;
+  },1300);
+}
+
+document.addEventListener('click',e=>{
+  const c=e.target.closest('[data-copy]'); if(!c)return;
+  copyText(decodeURIComponent(c.dataset.copy),c);
+});
+
+renderChips();render();
+</script>
+</body>
+</html>
